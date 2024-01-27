@@ -110,4 +110,15 @@ public class DressupOutfit : MonoBehaviour
         return FindObjectsOfType<DressupChicken>();
 	}
 
+	public void Reset() {
+        bodyAccessory = null;
+        feetAccessory = null;
+        headAccessory = null;
+        tailAccessory = null;
+        frontWingAccessory = null;
+        backWingAccessory = null;
+
+        currentColor = null;
+    }
+
 }
