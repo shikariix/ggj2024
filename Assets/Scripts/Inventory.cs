@@ -37,7 +37,7 @@ public class Inventory : MonoBehaviour
     public void AddItem(AccessoryObject newAccessory) {
         bool alreadyObtained = false;
         for (int i = 0; i < accessoryList.Count; i++) {
-            if (accessoryList[i].accessoryName == newAccessory.accessoryName) { // check if the item being added was already in the list
+            if (accessoryList[i] == newAccessory) { // check if the item being added was already in the list
                 alreadyObtained = true;
             }
         }
@@ -71,7 +71,28 @@ public class Inventory : MonoBehaviour
         return accessoryList.Contains(accessory);
     }
 
+    
 
+	public void AddColor(string newColorName) {
+        for (int i = 0; i < allColors.colorList.Length; i++) {
+            if (allAccessories.accessoryList[i].accessoryName == newColorName) {
+                AddColor(allColors.colorList[i]);
+                i = allAccessories.accessoryList.Length + 9000; // stop the for-loop
+			}
+		}
+	}
+    public void AddColor(ColorObject newColor) {
+        bool alreadyObtained = false;
+        for (int i = 0; i < colorList.Count; i++) {
+            if (colorList[i] == newColor) { // check if the item being added was already in the list
+                alreadyObtained = true;
+            }
+        }
+
+        if (alreadyObtained == false) {
+            colorList.Add(newColor); // add to the list
+        }
+	}
 
     public List<ColorObject> GetAllInventoryColors() {
         if (debug) {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35093dfbeaab3744fa049e47994aa913, type: 3}
   m_Name: _ColorObject_BW
   m_EditorClassIdentifier: 
-  colorName: basic bitch
+  colorName: basic chick
   colorDescription: dit is je basic bitch startkleur, elke kip heeft deze vederverf
     thuis liggen
   colorMap: {fileID: 2800000, guid: 92b3119672aee91409ea4e39ae954ec3, type: 3}
