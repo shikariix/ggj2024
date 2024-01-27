@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DressupChicken : MonoBehaviour
 {
+
+    public bool isMainCharacter = false;
     
     [Header("Accessory sprite containers")]
     public SpriteRenderer bodyAccessorySprite;
@@ -42,18 +44,33 @@ public class DressupChicken : MonoBehaviour
         backWingAccessorySprite.enabled = false;
 
         propertyBlock = new MaterialPropertyBlock();
+    }
 
+	private void Start() {
+        if (isMainCharacter && DressupOutfit._DressupOutfit != null) {
+            DressupOutfit outfit = DressupOutfit._DressupOutfit;
+            SetAccessory(outfit.GetCurrentAccessory(AccessoryType.Body));
+            SetAccessory(outfit.GetCurrentAccessory(AccessoryType.Tail));
+            SetAccessory(outfit.GetCurrentAccessory(AccessoryType.Feet));
+            SetAccessory(outfit.GetCurrentAccessory(AccessoryType.BackWing));
+            SetAccessory(outfit.GetCurrentAccessory(AccessoryType.FrontWing));
+            SetAccessory(outfit.GetCurrentAccessory(AccessoryType.Head));
+
+            SetColor(outfit.CurrentColor());
+		}
     }
 
 	public void SetAccessory(AccessoryObject accessory, bool canRemove = true) {
-        if (GetCurrentAccessory(accessory.attachmentPoint) == accessory && canRemove) {
-            SetCurrentAccessory(accessory, canRemove);
-            GetRenderer(accessory.attachmentPoint).enabled = false;
-        }
-		else {
-            SetCurrentAccessory(accessory);
-            GetRenderer(accessory.attachmentPoint).sprite = accessory.sprite;
-            GetRenderer(accessory.attachmentPoint).enabled = true;
+        if (accessory != null) {
+            if (GetCurrentAccessory(accessory.attachmentPoint) == accessory && canRemove) {
+                SetCurrentAccessory(accessory, canRemove);
+                GetRenderer(accessory.attachmentPoint).enabled = false;
+            }
+            else {
+                SetCurrentAccessory(accessory);
+                GetRenderer(accessory.attachmentPoint).sprite = accessory.sprite;
+                GetRenderer(accessory.attachmentPoint).enabled = true;
+            }
         }
 	}
 
@@ -62,39 +79,39 @@ public class DressupChicken : MonoBehaviour
 	}
 
     public void SetColor(ColorObject color) {
-        if (color.colorMap != null) {
+        if (color != null) {
+            if (color.colorMap != null) {
+                currentColor = color;
 
-            currentColor = color;
+                bodySprite.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetTexture("_ColorMap", color.colorMap);
+                bodySprite.SetPropertyBlock(propertyBlock);
 
-            bodySprite.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetTexture("_ColorMap", color.colorMap);
-            bodySprite.SetPropertyBlock(propertyBlock);
+                frontFootSprite.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetTexture("_ColorMap", color.colorMap);
+                frontFootSprite.SetPropertyBlock(propertyBlock);
 
-            frontFootSprite.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetTexture("_ColorMap", color.colorMap);
-            frontFootSprite.SetPropertyBlock(propertyBlock);
+                backFootSprite.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetTexture("_ColorMap", color.colorMap);
+                backFootSprite.SetPropertyBlock(propertyBlock);
 
-            backFootSprite.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetTexture("_ColorMap", color.colorMap);
-            backFootSprite.SetPropertyBlock(propertyBlock);
+                headSprite.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetTexture("_ColorMap", color.colorMap);
+                headSprite.SetPropertyBlock(propertyBlock);
 
-            headSprite.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetTexture("_ColorMap", color.colorMap);
-            headSprite.SetPropertyBlock(propertyBlock);
+                tailSprite.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetTexture("_ColorMap", color.colorMap);
+                tailSprite.SetPropertyBlock(propertyBlock);
 
-            tailSprite.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetTexture("_ColorMap", color.colorMap);
-            tailSprite.SetPropertyBlock(propertyBlock);
+                frontWingSprite.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetTexture("_ColorMap", color.colorMap);
+                frontWingSprite.SetPropertyBlock(propertyBlock);
 
-            frontWingSprite.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetTexture("_ColorMap", color.colorMap);
-            frontWingSprite.SetPropertyBlock(propertyBlock);
-
-            backWingSprite.GetPropertyBlock(propertyBlock);
-            propertyBlock.SetTexture("_ColorMap", color.colorMap);
-            backWingSprite.SetPropertyBlock(propertyBlock);
-
-		}
+                backWingSprite.GetPropertyBlock(propertyBlock);
+                propertyBlock.SetTexture("_ColorMap", color.colorMap);
+                backWingSprite.SetPropertyBlock(propertyBlock);
+            }
+        }
 	}
 
     public ColorObject CurrentColor() {
