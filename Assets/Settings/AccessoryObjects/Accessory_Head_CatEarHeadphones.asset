@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3ee04535f6597e4a9b379d3bdb6f084, type: 3}
-  m_Name: AccessoryObject_Front_HandBag
+  m_Name: Accessory_Head_CatEarHeadphones
   m_EditorClassIdentifier: 
-  accessoryName: handtas
-  accessoryDescription: 
-  attachmentPoint: 5
-  sprite: {fileID: 21300000, guid: c51085d5675c49644ab3d5400242a827, type: 3}
-  color: {r: 1, g: 1, b: 1, a: 1}
+  accessoryName: koptelefoon
+  accessoryDialog: []
+  attachmentPoint: 3
+  sprite: {fileID: 21300000, guid: bd215d73b92c8e8419a0de7cc9100fd4, type: 3}
