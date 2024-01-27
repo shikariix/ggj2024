@@ -6,12 +6,14 @@ public class DressupUIManager : MonoBehaviour
 {
 
 	[Header("Accessories")]
+	public GameObject noAccessoriesButton;
 	public DressupTabButton accessoryTabButton;
     public GameObject accessoryButtonPrefab;
 	public GameObject accessoryScrollRect;
 	public Transform accessoryButtonContainer;
 
 	[Header("Colors")]
+	public GameObject noColorsButton;
 	public DressupTabButton colorTabButton;
 	public GameObject colorButtonPrefab;
 	public GameObject colorScrollRect;
@@ -32,6 +34,7 @@ public class DressupUIManager : MonoBehaviour
 				accessoryButtonList.Add(newButton);
 			}
 		}
+		noAccessoriesButton.SetActive(accessoryList.Count == 0);
 
 		// Generate color buttons
 		List<ColorObject> colorList = Inventory._Inventory.GetAllInventoryColors();
@@ -43,6 +46,7 @@ public class DressupUIManager : MonoBehaviour
 				colorButtonList.Add(newButton);
 			}
 		}
+		noColorsButton.SetActive(colorList.Count == 0);
 
 		accessoryTabButton._Manager = this;
 		colorTabButton._Manager = this;
