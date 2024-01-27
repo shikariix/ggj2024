@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Accessory_Body_Boa
   m_EditorClassIdentifier: 
   accessoryName: boa
+  accessoryNameEn: boa
   accessoryDialog: []
+  accessoryDialogEn: []
   attachmentPoint: 1
   sprite: {fileID: 21300000, guid: 1ec0dbf2dd5b4ff42abb94bd455573e4, type: 3}

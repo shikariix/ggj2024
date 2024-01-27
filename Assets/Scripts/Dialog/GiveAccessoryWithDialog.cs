@@ -10,8 +10,8 @@ public class GiveAccessoryWithDialog : MonoBehaviour
     public AccessoryObject accessory;
 
     public GameObject accessoryPanel;
+    public TextMeshProUGUI accessoryTextField;
     public Image accessoryImage;
-
 
     int currentText = -1;
 
@@ -25,6 +25,8 @@ public class GiveAccessoryWithDialog : MonoBehaviour
         dialogButton.onClick.AddListener(updateText);
         accessoryImage.sprite = accessory.sprite;
         accessoryImage.SetNativeSize();
+        accessoryTextField.text = accessory.accessoryName;
+        if (LocalizationManager._LocalizationManager != null) { if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) { accessoryTextField.SetText(accessory.accessoryNameEn); } }
         updateText();
     }
     void OnMouseDown()
@@ -39,7 +41,13 @@ public class GiveAccessoryWithDialog : MonoBehaviour
 
     public void updateText()
     {
-        if (currentText < accessory.accessoryDialog.Length-1)
+        int dialogLength = accessory.accessoryDialog.Length - 1;
+        if (LocalizationManager._LocalizationManager != null) {
+            if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) {
+                dialogLength = accessory.accessoryDialogEn.Length - 1;
+            }
+        }
+        if (currentText < dialogLength)
         {
             currentText++;
             displayText(currentText);
@@ -52,7 +60,17 @@ public class GiveAccessoryWithDialog : MonoBehaviour
 
     public void displayText(int index)
     {
-        textMeshPro.SetText(accessory.accessoryDialog[index]);
+        if (LocalizationManager._LocalizationManager != null) {
+            if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch) {
+                textMeshPro.SetText(accessory.accessoryDialog[index]);
+            }
+			else {
+                textMeshPro.SetText(accessory.accessoryDialogEn[index]);
+            }
+        }
+		else {
+            textMeshPro.SetText(accessory.accessoryDialog[index]);
+        }
     }
 
     private void closeDialog()

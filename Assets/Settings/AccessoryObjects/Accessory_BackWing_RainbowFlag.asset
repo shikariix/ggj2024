@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: Accessory_BackWing_RainbowFlag
   m_EditorClassIdentifier: 
   accessoryName: regenboog vlaggetej
-  accessoryDialog: []
+  accessoryNameEn: rainbwow flag
+  accessoryDialog:
+  - Hey. Psst.
+  - Ik hoorde dat je op date gaat.
+  - Dan mag deze niet missen.
+  accessoryDialogEn:
+  - Hey. Psst.
+  - I heard you're going on a date.
+  - It's dangerous to go alone, take this.
   attachmentPoint: 6
   sprite: {fileID: 21300000, guid: e6b84550cf12f3c48bcb162f2d6ffef0, type: 3}

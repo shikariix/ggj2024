@@ -44,6 +44,10 @@ public class DressupChicken : MonoBehaviour
         backWingAccessorySprite.enabled = false;
 
         propertyBlock = new MaterialPropertyBlock();
+
+        if (GetComponentInChildren<GiveAccessoryWithDialog>()) {
+            SetAccessory(GetComponentInChildren<GiveAccessoryWithDialog>().accessory);
+        }
     }
 
 	private void Start() {

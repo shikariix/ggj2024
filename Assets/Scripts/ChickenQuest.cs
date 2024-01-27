@@ -10,6 +10,7 @@ public class ChickenQuest : MonoBehaviour
 
     //Dialoog bij klikken verkeerde kip
     public string wrongChicken = "(Dat is denk ik niet de kip die ik zoek...)";
+    public string englishWrongChicken = "(Then this is I think not the chicken i seek...)";
 
     //UI elements
     public GameObject dialoguePanel;

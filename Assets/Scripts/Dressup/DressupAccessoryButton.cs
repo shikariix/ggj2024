@@ -27,6 +27,14 @@ public class DressupAccessoryButton : MonoBehaviour
 
 		if (accessory != null) {
 			nameText.text = accessory.accessoryName;
+			if (LocalizationManager._LocalizationManager != null) {
+				if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch) {
+					nameText.text = accessory.accessoryName;
+				}
+				else {
+					nameText.text = accessory.accessoryNameEn;
+				}
+			}
 		}
 	}
 

@@ -13,6 +13,14 @@ MonoBehaviour:
   m_Name: Accessory_BackWing_Bouquet
   m_EditorClassIdentifier: 
   accessoryName: boeketj
-  accessoryDialog: []
+  accessoryNameEn: bouqut
+  accessoryDialog:
+  - Oh, jij ziet er fashionable uit!
+  - Je date kan dit vast waarderen.
+  - Hier, een goedmakertje.
+  accessoryDialogEn:
+  - "Oh, don't you look fashionable!\t"
+  - Your date can probably value this.
+  - Here, atonement.
   attachmentPoint: 6
   sprite: {fileID: 21300000, guid: 58a50754774ec114cb8d8f9d0e9c47a1, type: 3}

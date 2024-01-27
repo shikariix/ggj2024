@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Accessory_Head_DoughDimmadomeHat
   m_EditorClassIdentifier: 
   accessoryName: dimmadome
+  accessoryNameEn: dimmadome
   accessoryDialog: []
+  accessoryDialogEn: []
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: f8a9e100b2fe9e54c88a92944e3c9f4e, type: 3}

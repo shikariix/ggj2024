@@ -33,6 +33,14 @@ public class DressupColorButton : MonoBehaviour
 				colorSprites[1].color = color.colorB;
 				colorSprites[2].color = color.colorC;
 			}
+			if (LocalizationManager._LocalizationManager != null) {
+				if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch) {
+					nameText.text = color.colorName;
+				}
+				else {
+					nameText.text = color.colorNameEn;
+				}
+			}
 		}
 	}
 

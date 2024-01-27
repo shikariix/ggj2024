@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: Accessory_Head_ShrekEars
   m_EditorClassIdentifier: 
   accessoryName: shrek oren
-  accessoryDialog: []
+  accessoryNameEn: shrek ears
+  accessoryDialog:
+  - Ga mijn moeras uit!
+  accessoryDialogEn:
+  - Get out of my swamp!
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: e9eea41b1f7576442970c395bf1feb4a, type: 3}
