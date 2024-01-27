@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: AccessoryObject_Feet_Socks
   m_EditorClassIdentifier: 
   accessoryName: geitenwollensokken
-  accessoryDescription: 
+  accessoryDialog:
+  - Als je echt indruk wil maken op een meissie,
+  - dan moet je je van je zachte kant laten zien!
   attachmentPoint: 2
   sprite: {fileID: 21300000, guid: 10153c29186201144babfc9200bf7386, type: 3}
-  color: {r: 1, g: 1, b: 1, a: 1}

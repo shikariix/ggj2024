@@ -5,7 +5,7 @@ public class AccessoryObject : ScriptableObject {
     [Header("Info")]
     public string accessoryName = "unnamedObject";
     [TextArea(3, 5)]
-    public string accessoryDescription;
+    public string[] accessoryDialog;
 
     [Header("Settings")]
     public AccessoryType attachmentPoint;

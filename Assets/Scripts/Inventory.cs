@@ -45,7 +45,7 @@ public class Inventory : MonoBehaviour
         if (alreadyObtained == false) {
             accessoryList.Add(newAccessory); // add to the list
         }
-	}
+    }
 
     public List<AccessoryObject> GetAllInventoryAccessories() {
         if (debug) {

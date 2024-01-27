@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AccessoryObject_Back_RainbowFlag
   m_EditorClassIdentifier: 
   accessoryName: regenboog vlagje
-  accessoryDescription: 
+  accessoryDialog:
+  - Uhm. Neem dit ofzo.
   attachmentPoint: 6
   sprite: {fileID: 21300000, guid: b2d81b7306dcb6940a0db1860d28b960, type: 3}
-  color: {r: 1, g: 1, b: 1, a: 1}
