@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -773,13 +773,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 511028865}
   m_SourcePrefab: {fileID: 100100000, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
 --- !u!224 &511028863 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4203067488314922401, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
   m_PrefabInstance: {fileID: 511028862}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &511028864 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+  m_PrefabInstance: {fileID: 511028862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &511028865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511028864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: en wat een leuke meid
+  englishText: and what a nice gal
 --- !u!1 &635717206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1344,7 @@ GameObject:
   - component: {fileID: 1167957940}
   - component: {fileID: 1167957942}
   - component: {fileID: 1167957941}
+  - component: {fileID: 1167957943}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -1444,6 +1468,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1167957939}
   m_CullTransparentMesh: 1
+--- !u!114 &1167957943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1167957939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: sluit het spel :c
+  englishText: close the game :c
 --- !u!1001 &1169868014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2067,6 +2106,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8194256010084456442, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1411878569}
+    - targetCorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1411878571}
   m_SourcePrefab: {fileID: 100100000, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
 --- !u!224 &1411878567 stripped
 RectTransform:
@@ -2090,6 +2132,26 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!1 &1411878570 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+  m_PrefabInstance: {fileID: 1411878566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1411878571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1411878570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: bedankt!
+  englishText: thank you!
 --- !u!1001 &1501436152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2197,13 +2259,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1501436155}
   m_SourcePrefab: {fileID: 100100000, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
 --- !u!224 &1501436153 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4203067488314922401, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
   m_PrefabInstance: {fileID: 1501436152}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1501436154 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+  m_PrefabInstance: {fileID: 1501436152}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1501436155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501436154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: ze vond mn outfit leuk!
+  englishText: she found my outfit nice!
 --- !u!1 &1504380505
 GameObject:
   m_ObjectHideFlags: 0
@@ -2825,6 +2910,7 @@ GameObject:
   - component: {fileID: 1954389208}
   - component: {fileID: 1954389210}
   - component: {fileID: 1954389209}
+  - component: {fileID: 1954389211}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -2948,6 +3034,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1954389207}
   m_CullTransparentMesh: 1
+--- !u!114 &1954389211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954389207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: speel opnieuw
+  englishText: play agaibn
 --- !u!1 &1973714310
 GameObject:
   m_ObjectHideFlags: 0
@@ -3666,8 +3767,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7527949326115180147}
   m_SourcePrefab: {fileID: 100100000, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+--- !u!1 &7527949326115180146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4742376734441880143, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
+  m_PrefabInstance: {fileID: 7527949326115180145}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7527949326115180147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527949326115180146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: wat een leuke date!
+  englishText: what a nice date!
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

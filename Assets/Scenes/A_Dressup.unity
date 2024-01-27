@@ -282,6 +282,7 @@ GameObject:
   - component: {fileID: 225116232}
   - component: {fileID: 225116234}
   - component: {fileID: 225116233}
+  - component: {fileID: 225116235}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -405,6 +406,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 225116231}
   m_CullTransparentMesh: 1
+--- !u!114 &225116235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225116231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: klik hier om op date te gaan
+  englishText: click here to on date to go
 --- !u!1 &233460465
 GameObject:
   m_ObjectHideFlags: 0
@@ -708,6 +724,81 @@ MonoBehaviour:
   allAccessories: {fileID: 11400000, guid: 430f40bb22a628e4ba010a9a6607ee46, type: 2}
   allColors: {fileID: 11400000, guid: 113b056da5328264293a6e2db94b32d4, type: 2}
   debug: 1
+--- !u!1 &738082303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 738082304}
+  - component: {fileID: 738082306}
+  - component: {fileID: 738082305}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &738082304
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738082303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1114846807}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 250, y: 250}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &738082305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738082303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 37f3903aacc25e547b5b79237d88cd52, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &738082306
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738082303}
+  m_CullTransparentMesh: 1
 --- !u!1 &801522419
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +932,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 296.5, y: -210}
-  m_SizeDelta: {x: 500, y: 300}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &802875603
 MonoBehaviour:
@@ -1069,6 +1160,7 @@ GameObject:
   - component: {fileID: 855137872}
   - component: {fileID: 855137874}
   - component: {fileID: 855137873}
+  - component: {fileID: 855137875}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -1115,10 +1207,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ojee, blijkbaar heb je geen spullen...
+  m_text: 'ojee, blijkbaar heb je geen spullen... je hebt wat nodig om naar je date
+    te gaan vanavond!
 
-    klik hier om buiten meer te
-    zoeken!'
+
+    klik hier om buiten meer te zoeken!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5baa6b4dff74224ab836445dfe12e23, type: 2}
   m_sharedMaterial: {fileID: -5951673041127650973, guid: b5baa6b4dff74224ab836445dfe12e23, type: 2}
@@ -1195,6 +1288,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 855137871}
   m_CullTransparentMesh: 1
+--- !u!114 &855137875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 855137871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: 'ojee, blijkbaar heb je geen spullen... je hebt wat nodig om naar je
+    date te gaan vanavond!
+
+
+    klik hier om buiten meer te zoeken!'
+  englishText: 'uh oh, apparently have you no stuffs... you need some to go towards
+    your date to go tonight!
+
+
+    click here to outside find more!'
 --- !u!1 &901326827 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2372262743470878522, guid: 45de1ffba7dffde49b86ce4ed32f4ce4, type: 3}
@@ -1216,6 +1332,7 @@ GameObject:
   - component: {fileID: 1077758560}
   - component: {fileID: 1077758562}
   - component: {fileID: 1077758561}
+  - component: {fileID: 1077758563}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -1339,6 +1456,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077758559}
   m_CullTransparentMesh: 1
+--- !u!114 &1077758563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077758559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: klik hier om buiten meer spullen te zoeken
+  englishText: click here to outside find more stuffs
 --- !u!1 &1114846806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1373,6 +1505,7 @@ RectTransform:
   - {fileID: 839906189}
   - {fileID: 681161879}
   - {fileID: 225116232}
+  - {fileID: 738082304}
   m_Father: {fileID: 259889320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
@@ -1588,7 +1721,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 300}
+  m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1257290162
 MonoBehaviour:
@@ -2276,7 +2409,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5419989429498878795, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
       propertyPath: m_fontSize
-      value: 48
+      value: 56
       objectReference: {fileID: 0}
     - target: {fileID: 6328346023695185397, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
       propertyPath: id
@@ -2285,7 +2418,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3194490214838312800, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1877561994}
   m_SourcePrefab: {fileID: 100100000, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
 --- !u!224 &1877561991 stripped
 RectTransform:
@@ -2303,6 +2439,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00192d47977a4e47bc49a5791da1b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1877561993 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3194490214838312800, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
+  m_PrefabInstance: {fileID: 1877561990}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1877561994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877561993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: Vederverf
+  englishText: Plumepaints
 --- !u!1001 &1999774371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2401,12 +2557,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5419989429498878795, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
       propertyPath: m_fontSize
-      value: 48
+      value: 56
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3194490214838312800, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1999774375}
   m_SourcePrefab: {fileID: 100100000, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
 --- !u!224 &1999774372 stripped
 RectTransform:
@@ -2424,6 +2583,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a00192d47977a4e47bc49a5791da1b98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1999774374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3194490214838312800, guid: f5b65c2ffa3288d49a8f54b58db2003e, type: 3}
+  m_PrefabInstance: {fileID: 1999774371}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1999774375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999774374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: Spullen
+  englishText: Stuff
 --- !u!1 &2036921747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,6 +2657,8 @@ MonoBehaviour:
   colorButtonPrefab: {fileID: 1092278449488754064, guid: c38ab9fd68aae0241a4e3d686e67b0f7, type: 3}
   colorScrollRect: {fileID: 1448188290}
   colorButtonContainer: {fileID: 1448188289}
+  proceedToDateButton: {fileID: 1114846809}
+  proceedToDateLock: {fileID: 738082305}
 --- !u!1 &2135851434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2564,6 +2745,7 @@ GameObject:
   - component: {fileID: 2140947562}
   - component: {fileID: 2140947564}
   - component: {fileID: 2140947563}
+  - component: {fileID: 2140947565}
   m_Layer: 5
   m_Name: Name
   m_TagString: Untagged
@@ -2610,10 +2792,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'ojee, blijkbaar heb je geen vederverf...
+  m_text: 'ojee, blijkbaar heb je geen verf... je hebt wat nodig om naar je date
+    te gaan vanavond!
 
-    klik hier om buiten meer
-    te zoeken!'
+
+    klik hier om buiten meer te zoeken!'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b5baa6b4dff74224ab836445dfe12e23, type: 2}
   m_sharedMaterial: {fileID: -5951673041127650973, guid: b5baa6b4dff74224ab836445dfe12e23, type: 2}
@@ -2690,6 +2873,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140947561}
   m_CullTransparentMesh: 1
+--- !u!114 &2140947565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2140947561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ac6b9bbc85af6e438d583dea188096d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textField: {fileID: 0}
+  dutchText: 'ojee, blijkbaar heb je geen verf... je hebt wat nodig om naar je date
+    te gaan vanavond!
+
+
+    klik hier om buiten meer te zoeken!'
+  englishText: 'uh oh, apparently have you no plume paints... you need some to go
+    towards your date to go tonight!
+
+
+    click here to outside find more!'
 --- !u!1001 &2464093972700718831
 PrefabInstance:
   m_ObjectHideFlags: 0

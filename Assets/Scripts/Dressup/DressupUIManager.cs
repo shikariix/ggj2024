@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DressupUIManager : MonoBehaviour
 {
@@ -18,6 +19,10 @@ public class DressupUIManager : MonoBehaviour
 	public GameObject colorButtonPrefab;
 	public GameObject colorScrollRect;
 	public Transform colorButtonContainer;
+
+	[Header("Proceed")]
+	public Button proceedToDateButton;
+	public Image proceedToDateLock;
 
     private List<DressupAccessoryButton> accessoryButtonList = new List<DressupAccessoryButton>();
     private List<DressupColorButton> colorButtonList = new List<DressupColorButton>();
@@ -51,6 +56,15 @@ public class DressupUIManager : MonoBehaviour
 		colorTabButton._Manager = this;
 
 		TabButtonPressed(0);
+
+		if (Inventory._Inventory.GetAllInventoryAccessories().Count + Inventory._Inventory.GetAllInventoryColors().Count < 5) {
+			proceedToDateButton.interactable = false;
+			proceedToDateLock.enabled = true;
+		}
+		else {
+			proceedToDateButton.interactable = true;
+			proceedToDateLock.enabled = false;
+		}
 	}
 
 	public void TabButtonPressed(int value) {
