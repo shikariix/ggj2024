@@ -16,7 +16,7 @@ public class SetRenderQueueComponent : MonoBehaviour {
 		// OrderInLayer = 2
 	}
 
-	private Renderer renderer;
+	private Renderer rend;
 	private Material material;
 
 	private void Start() {
@@ -26,8 +26,8 @@ public class SetRenderQueueComponent : MonoBehaviour {
 				material.renderQueue = value;
 				break;
 			case SortingType.SortingOrder:
-				renderer = transform.GetComponent<Renderer>();
-				renderer.sortingOrder = value;
+				rend = transform.GetComponent<Renderer>();
+				rend.sortingOrder = value;
 				break;
 		}
 	}

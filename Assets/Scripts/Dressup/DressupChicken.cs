@@ -6,12 +6,12 @@ public class DressupChicken : MonoBehaviour
 {
     
     [Header("Accessory sprite containers")]
-    public SpriteRenderer bodySprite;
-    public SpriteRenderer feetSprite;
-    public SpriteRenderer headSprite;
-    public SpriteRenderer tailSprite;
-    public SpriteRenderer frontWingSprite;
-    public SpriteRenderer backWingSprite;
+    public SpriteRenderer bodyAccessorySprite;
+    public SpriteRenderer feetAccessorySprite;
+    public SpriteRenderer headAccessorySprite;
+    public SpriteRenderer tailAccessorySprite;
+    public SpriteRenderer frontWingAccessorySprite;
+    public SpriteRenderer backWingAccessorySprite;
 
     private AccessoryObject bodyAccessory;
     private AccessoryObject feetAccessory;
@@ -20,14 +20,30 @@ public class DressupChicken : MonoBehaviour
     private AccessoryObject frontWingAccessory;
     private AccessoryObject backWingAccessory;
 
-	private void Awake() {
-        bodySprite.enabled = false;
-        feetSprite.enabled = false;
-        headSprite.enabled = false;
-        tailSprite.enabled = false;
-        frontWingSprite.enabled = false;
-        backWingSprite.enabled = false;
-	}
+    [Header("Body sprites")]
+    public SpriteRenderer bodySprite;
+    public SpriteRenderer frontFootSprite;
+    public SpriteRenderer backFootSprite;
+    public SpriteRenderer headSprite;
+    public SpriteRenderer tailSprite;
+    public SpriteRenderer frontWingSprite;
+    public SpriteRenderer backWingSprite;
+
+    private ColorObject currentColor;
+    private MaterialPropertyBlock propertyBlock;
+
+
+    private void Awake() {
+        bodyAccessorySprite.enabled = false;
+        feetAccessorySprite.enabled = false;
+        headAccessorySprite.enabled = false;
+        tailAccessorySprite.enabled = false;
+        frontWingAccessorySprite.enabled = false;
+        backWingAccessorySprite.enabled = false;
+
+        propertyBlock = new MaterialPropertyBlock();
+
+    }
 
 	public void SetAccessory(AccessoryObject accessory, bool canRemove = true) {
         if (GetCurrentAccessory(accessory.attachmentPoint) == accessory && canRemove) {
@@ -45,31 +61,64 @@ public class DressupChicken : MonoBehaviour
         return GetCurrentAccessory(accessory.attachmentPoint) == accessory;
 	}
 
+    public void SetColor(ColorObject color) {
+        if (color.colorMap != null) {
+
+            currentColor = color;
+
+            bodySprite.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetTexture("_ColorMap", color.colorMap);
+            bodySprite.SetPropertyBlock(propertyBlock);
+
+            frontFootSprite.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetTexture("_ColorMap", color.colorMap);
+            frontFootSprite.SetPropertyBlock(propertyBlock);
+
+            backFootSprite.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetTexture("_ColorMap", color.colorMap);
+            backFootSprite.SetPropertyBlock(propertyBlock);
+
+            headSprite.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetTexture("_ColorMap", color.colorMap);
+            headSprite.SetPropertyBlock(propertyBlock);
+
+            tailSprite.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetTexture("_ColorMap", color.colorMap);
+            tailSprite.SetPropertyBlock(propertyBlock);
+
+            frontWingSprite.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetTexture("_ColorMap", color.colorMap);
+            frontWingSprite.SetPropertyBlock(propertyBlock);
+
+            backWingSprite.GetPropertyBlock(propertyBlock);
+            propertyBlock.SetTexture("_ColorMap", color.colorMap);
+            backWingSprite.SetPropertyBlock(propertyBlock);
+
+		}
+	}
+
+    public ColorObject CurrentColor() {
+        return currentColor;
+	}
+
 
 
     private AccessoryObject GetCurrentAccessory(AccessoryType type) {
         switch (type) {
             case AccessoryType.Body:
                 return bodyAccessory;
-                break;
             case AccessoryType.Feet:
                 return feetAccessory;
-                break;
             case AccessoryType.Head:
                 return headAccessory;
-                break;
             case AccessoryType.Tail:
                 return tailAccessory;
-                break;
             case AccessoryType.FrontWing:
                 return frontWingAccessory;
-                break;
             case AccessoryType.BackWing:
                 return backWingAccessory;
-                break;
             default:
                 return null;
-                break;
 		}
 	}
 
@@ -101,26 +150,19 @@ public class DressupChicken : MonoBehaviour
     private SpriteRenderer GetRenderer(AccessoryType type) {
         switch (type) {
             case AccessoryType.Body:
-                return bodySprite;
-                break;
+                return bodyAccessorySprite;
             case AccessoryType.Feet:
-                return feetSprite;
-                break;
+                return feetAccessorySprite;
             case AccessoryType.Head:
-                return headSprite;
-                break;
+                return headAccessorySprite;
             case AccessoryType.Tail:
-                return tailSprite;
-                break;
+                return tailAccessorySprite;
             case AccessoryType.FrontWing:
-                return frontWingSprite;
-                break;
+                return frontWingAccessorySprite;
             case AccessoryType.BackWing:
-                return backWingSprite;
-                break;
+                return backWingAccessorySprite;
             default:
                 return null;
-                break;
 		}
 	}
 

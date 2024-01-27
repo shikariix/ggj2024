@@ -10,8 +10,5 @@ public class AccessoryObject : ScriptableObject {
     [Header("Settings")]
     public AccessoryType attachmentPoint;
     public Sprite sprite;
-
-    [Header("Unused Settings That I Would Love To Add")]
-    public Color color = Color.white;
 }
 

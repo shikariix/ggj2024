@@ -6,11 +6,13 @@ public class Inventory : MonoBehaviour
 {
 
     public AccessoryList allAccessories;
+    public ColorList allColors;
     public bool debug = false;
 
     private static Inventory inventory;
 
     private List<AccessoryObject> accessoryList = new List<AccessoryObject>();
+    private List<ColorObject> colorList = new List<ColorObject>();
 
 	public static Inventory _Inventory { get => inventory; }
 
@@ -67,6 +69,32 @@ public class Inventory : MonoBehaviour
 
     public bool InventoryContainsAccessory(AccessoryObject accessory) {
         return accessoryList.Contains(accessory);
+    }
+
+
+
+    public List<ColorObject> GetAllInventoryColors() {
+        if (debug) {
+            List<ColorObject> all = new List<ColorObject>(allColors.colorList);
+            return all;
+        }
+        else {
+            return colorList;
+        }
+    }
+
+    public List<ColorObject> GetUnobtainedColors() {
+        List<ColorObject> unobtainedList = new List<ColorObject>();
+        for (int i = 0; i < allAccessories.accessoryList.Length; i++) {
+            if (!colorList.Contains(allColors.colorList[i])) {
+                unobtainedList.Add(allColors.colorList[i]);
+            }
+        }
+        return unobtainedList;
+    }
+
+    public bool InventoryContainsColor(ColorObject color) {
+        return colorList.Contains(color);
     }
 
 }
