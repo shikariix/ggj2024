@@ -19,7 +19,6 @@ public class DressupUIManager : MonoBehaviour
 	public GameObject colorScrollRect;
 	public Transform colorButtonContainer;
 
-	private DressupChicken chicken;
     private List<DressupAccessoryButton> accessoryButtonList = new List<DressupAccessoryButton>();
     private List<DressupColorButton> colorButtonList = new List<DressupColorButton>();
 
@@ -52,8 +51,6 @@ public class DressupUIManager : MonoBehaviour
 		colorTabButton._Manager = this;
 
 		TabButtonPressed(0);
-
-		chicken = FindObjectOfType<DressupChicken>();
 	}
 
 	public void TabButtonPressed(int value) {
@@ -64,18 +61,18 @@ public class DressupUIManager : MonoBehaviour
 	}
 
 	public void AccessoryButtonPressed(AccessoryObject accessory) {
-		chicken.SetAccessory(accessory);
+		DressupOutfit._DressupOutfit.SetAccessory(accessory);
 
 		foreach (DressupAccessoryButton button in accessoryButtonList) {
-			button.SetButtonState(chicken.AccessoryActive(button._Accessory));
+			button.SetButtonState(DressupOutfit._DressupOutfit.AccessoryActive(button._Accessory));
 		}
 	}
 
 	public void ColorButtonPressed(ColorObject color) {
-		chicken.SetColor(color);
+		DressupOutfit._DressupOutfit.SetColor(color);
 
 		foreach (DressupColorButton button in colorButtonList) {
-			button.SetButtonState(chicken.CurrentColor() == button._Color);
+			button.SetButtonState(DressupOutfit._DressupOutfit.CurrentColor() == button._Color);
 		}
 	}
 
