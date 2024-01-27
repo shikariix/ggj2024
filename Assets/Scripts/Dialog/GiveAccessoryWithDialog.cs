@@ -1,11 +1,8 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class DialogInstance : MonoBehaviour
+public class GiveAccessoryWithDialog : MonoBehaviour
 {
     public GameObject dialoguePanel;
     private Button dialogButton;
