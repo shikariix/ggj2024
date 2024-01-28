@@ -14,4 +14,7 @@ public class QuestObject : ScriptableObject
     /// Only relevant if above is false.
     /// </summary>
     public string[] questDialog;
+
+    [HideInInspector]
+    public bool completed;
 }

@@ -45,8 +45,8 @@ public class DressupChicken : MonoBehaviour
 
         propertyBlock = new MaterialPropertyBlock();
 
-        if (GetComponentInChildren<GiveAccessoryWithDialog>()) {
-            SetAccessory(GetComponentInChildren<GiveAccessoryWithDialog>().accessory);
+        if (GetComponentInChildren<Interaction>()) {
+            SetAccessory(GetComponentInChildren<Interaction>().accessory);
         }
     }
 

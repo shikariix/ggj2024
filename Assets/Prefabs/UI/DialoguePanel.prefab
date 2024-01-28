@@ -299,9 +299,10 @@ GameObject:
   - component: {fileID: 8824627040601977795}
   - component: {fileID: 6241772590419693509}
   - component: {fileID: 357978775718010298}
+  - component: {fileID: 6771776493845856600}
   m_Layer: 0
   m_Name: DialoguePanel
-  m_TagString: Untagged
+  m_TagString: DialogPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -367,6 +368,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 12.8
+--- !u!114 &6771776493845856600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6020028409077030736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e88602b8c96274cb1ac0f1b61894a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueText: {fileID: 4097306936076878652}
 --- !u!1 &6043393470081705129
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +469,7 @@ GameObject:
   - component: {fileID: 4097306936076878652}
   m_Layer: 0
   m_Name: Text (TMP)
-  m_TagString: Untagged
+  m_TagString: DialogueText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

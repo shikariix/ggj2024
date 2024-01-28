@@ -296,8 +296,8 @@ GameObject:
   - component: {fileID: 651396150432894513}
   - component: {fileID: 1602335273806187497}
   m_Layer: 0
-  m_Name: Text (TMP) (1)
-  m_TagString: Untagged
+  m_Name: AccessoryTextField
+  m_TagString: AccessoryText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -429,9 +429,10 @@ GameObject:
   - component: {fileID: 6126617752020193555}
   - component: {fileID: 3456437449563369369}
   - component: {fileID: 4937089540460891597}
+  - component: {fileID: 8097841027081315313}
   m_Layer: 0
   m_Name: AccessoryPanel
-  m_TagString: Untagged
+  m_TagString: AccessoryPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -497,6 +498,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 6.4
+--- !u!114 &8097841027081315313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4472587203210085591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a760d7e36cd275641a606a0a77bad279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accessoryImage: {fileID: 238836055875544840}
+  accessoryTextField: {fileID: 1602335273806187497}
 --- !u!1 &4971252569903435595
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,7 +746,7 @@ GameObject:
   - component: {fileID: 238836055875544840}
   m_Layer: 0
   m_Name: Image
-  m_TagString: Untagged
+  m_TagString: AccessoryImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
