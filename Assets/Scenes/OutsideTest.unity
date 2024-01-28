@@ -311,28 +311,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: AccessoryPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 4472587203210085591, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6126617752020193555, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6126617752020193555, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
       propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126617752020193555, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126617752020193555, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126617752020193555, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6126617752020193555, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
-      propertyPath: m_AnchorMin.y
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6126617752020193555, guid: f4e6bb33bf8889845aaf5668cba1fa7a, type: 3}
@@ -762,6 +750,10 @@ PrefabInstance:
     - target: {fileID: 6020028409077030736, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
       propertyPath: m_Name
       value: DialoguePanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6020028409077030736, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8824627040601977795, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
       propertyPath: m_Pivot.x
@@ -1526,7 +1518,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
