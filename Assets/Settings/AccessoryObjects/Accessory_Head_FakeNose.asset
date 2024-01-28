@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Accessory_Head_FakeNose
   m_EditorClassIdentifier: 
   accessoryName: fopneus
+  accessoryNameEn: prank nose
   accessoryDialog: []
+  accessoryDialogEn: []
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: dad49b691c3bbd4479f23127f83a4342, type: 3}

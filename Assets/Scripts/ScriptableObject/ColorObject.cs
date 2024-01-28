@@ -4,8 +4,10 @@ using UnityEngine;
 public class ColorObject : ScriptableObject {
     [Header("Info")]
     public string colorName = "unnamedObject";
+    public string colorNameEn = "unnamedObject";
     [TextArea(3, 5)]
     public string colorDescription;
+    public string colorDescriptionEn;
 
     [Header("Settings")]
     public Texture2D colorMap;

@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Accessory_FrontWing_Sword
   m_EditorClassIdentifier: 
   accessoryName: vet groot zwaard
+  accessoryNameEn: eggscalibur
   accessoryDialog: []
+  accessoryDialogEn: []
   attachmentPoint: 5
   sprite: {fileID: 21300000, guid: 8de0380a36786404a85f57e9bcf85e25, type: 3}

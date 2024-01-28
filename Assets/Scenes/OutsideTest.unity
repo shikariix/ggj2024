@@ -652,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ActiveQuest: {fileID: 0}
   wrongChicken: (Dat is denk ik niet de kip die ik zoek...)
+  englishWrongChicken: (Then this is I think not the chicken i seek...)
   dialoguePanel: {fileID: 1106257836}
   textMeshPro: {fileID: 1106257835}
   accessoryPanel: {fileID: 534244733}
@@ -1595,6 +1596,10 @@ PrefabInstance:
     - target: {fileID: 2184643786479713000, guid: f973722f560e5f141ac7d78bb9cc2da0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5868830183579581930, guid: f973722f560e5f141ac7d78bb9cc2da0, type: 3}
+      propertyPath: isMainCharacter
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

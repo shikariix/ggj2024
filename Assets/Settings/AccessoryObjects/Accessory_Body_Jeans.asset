@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Accessory_Body_Jeans
   m_EditorClassIdentifier: 
   accessoryName: spijkerbroekie
+  accessoryNameEn: jean
   accessoryDialog: []
+  accessoryDialogEn: []
   attachmentPoint: 1
   sprite: {fileID: 21300000, guid: 678ebf411f2b2bd4483e2c95a6fa950e, type: 3}

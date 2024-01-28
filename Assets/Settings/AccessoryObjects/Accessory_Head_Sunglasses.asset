@@ -13,6 +13,12 @@ MonoBehaviour:
   m_Name: Accessory_Head_Sunglasses
   m_EditorClassIdentifier: 
   accessoryName: deal with it zonnebril
-  accessoryDialog: []
+  accessoryNameEn: deal with it sunglasses
+  accessoryDialog:
+  - sta ik in de weg?
+  - boeit me niet, want ik schuif toch niet.
+  accessoryDialogEn:
+  - am I in your way?
+  - don't care, 'cause i don't move.
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: b5714296f2842bd40b861c52ba556713, type: 3}

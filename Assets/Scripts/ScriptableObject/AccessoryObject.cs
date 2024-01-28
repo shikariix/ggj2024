@@ -4,8 +4,11 @@ using UnityEngine;
 public class AccessoryObject : ScriptableObject {
     [Header("Info")]
     public string accessoryName = "unnamedObject";
+    public string accessoryNameEn = "unnamedObject";
     [TextArea(3, 5)]
     public string[] accessoryDialog;
+    [TextArea(3, 5)]
+    public string[] accessoryDialogEn;
 
     [Header("Settings")]
     public AccessoryType attachmentPoint;

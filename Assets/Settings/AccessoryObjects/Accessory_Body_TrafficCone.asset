@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Accessory_Body_TrafficCone
   m_EditorClassIdentifier: 
   accessoryName: kegel
+  accessoryNameEn: cone
   accessoryDialog: []
+  accessoryDialogEn: []
   attachmentPoint: 1
   sprite: {fileID: 21300000, guid: c2b1bfed1347b5647a18f13a21ebaf27, type: 3}

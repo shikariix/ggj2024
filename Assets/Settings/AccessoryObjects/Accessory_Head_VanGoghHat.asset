@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: Accessory_Head_VanGoghHat
   m_EditorClassIdentifier: 
   accessoryName: van gogh hoed
+  accessoryNameEn: van gogh hat
   accessoryDialog: []
+  accessoryDialogEn: []
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: b124c847c1a7d6440882f20e50174ca7, type: 3}
