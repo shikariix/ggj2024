@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: van gogh hoed
   accessoryNameEn: van gogh hat
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - Mijn dochter zoekt me? Bedankt dat je me dat laat weten!
+  - Hier heb je mijn beste hoed voor die leuke date vanavond
+  accessoryDialogEn:
+  - My daughter searches me? Thanks for letting me know!
+  - Here is my best hat for that nice date tonight.
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: b124c847c1a7d6440882f20e50174ca7, type: 3}

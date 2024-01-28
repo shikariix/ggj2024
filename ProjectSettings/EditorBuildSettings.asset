@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/A_Dressup.unity
     guid: c13dceef2c700204da845be2fd535a6a
   - enabled: 1
-    path: Assets/Scenes/OutsideScene.unity
+    path: Assets/Scenes/B_OutsideScene.unity
     guid: 2f69c68bf5fbd5047aa56a1643476b35
   - enabled: 1
     path: Assets/Scenes/C_StrikeAPose.unity

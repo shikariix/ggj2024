@@ -10,17 +10,25 @@ public class ChickenAnimator : MonoBehaviour
 	private Animator animator;
 	private float lastChangeTime;
 	private bool canRandom = true;
-	private bool isWalking = false;
+
+	private Vector3 scale = Vector3.one;
 
 	private void Awake() {
 		animator = GetComponent<Animator>();
 
 		lastChangeTime = Time.time;
 		StartCoroutine(RandomPeckTimer());
+
+		if (GetComponent<DressupChicken>() != null) {
+			if (!GetComponent<DressupChicken>().isMainCharacter) {
+				scale.x = Mathf.Sign(Random.Range(-1f, 1f));
+				transform.localScale = scale;
+				StartCoroutine(RandomDirectionSwap());
+			}
+		}
 	}
 
 	public void SetWalking(bool value) {
-		isWalking = value;
 		canRandom = !value;
 		animator.SetBool("IsWalking", value);
 		lastChangeTime = Time.time;
@@ -43,6 +51,13 @@ public class ChickenAnimator : MonoBehaviour
 			lastChangeTime = Time.time;
 		}
 		StartCoroutine(RandomPeckTimer());
+	}
+
+	private IEnumerator RandomDirectionSwap() {
+		yield return new WaitForSeconds(Random.Range(2f, 15f));
+		scale.x *= -1;
+		transform.localScale = scale;
+		StartCoroutine(RandomDirectionSwap());
 	}
 
 }

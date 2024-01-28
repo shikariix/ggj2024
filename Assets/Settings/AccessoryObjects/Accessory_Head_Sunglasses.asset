@@ -18,7 +18,7 @@ MonoBehaviour:
   - sta ik in de weg?
   - boeit me niet, want ik schuif toch niet.
   accessoryDialogEn:
-  - am I in your way?
+  - stand I in your way?
   - don't care, 'cause i don't move.
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: b5714296f2842bd40b861c52ba556713, type: 3}

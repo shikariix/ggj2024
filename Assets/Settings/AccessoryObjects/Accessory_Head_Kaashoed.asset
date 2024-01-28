@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: kaaskop
   accessoryNameEn: cheesehead
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - Het rook zo lekker!
+  - Maar het vuur stond op standje crematie!
+  accessoryDialogEn:
+  - It smelled so lekker!
+  - But the fire was on stand cremation!
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: 8a6e59ca397d1e34cbeb5204b8c5aeb3, type: 3}

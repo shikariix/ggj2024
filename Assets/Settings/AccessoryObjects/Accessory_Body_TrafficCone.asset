@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: kegel
   accessoryNameEn: cone
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - Niks verklappen!
+  - We doen veerstoppertje.
+  - 'Dit staat me heel erg in de weg. '
+  - Kun je het meenemen?
+  accessoryDialogEn:
+  - No far clapping!
+  - We are doing hide and seek.
+  - This is standing me very much in the way.
+  - Can you take it for me?
   attachmentPoint: 1
   sprite: {fileID: 21300000, guid: c2b1bfed1347b5647a18f13a21ebaf27, type: 3}
