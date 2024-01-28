@@ -18,8 +18,8 @@ public class Interaction : MonoBehaviour
 
     private void Awake()
     {
-        dialoguePanel = GameObject.FindObjectOfType<DialoguePanel>();
-        accessoryPanel = GameObject.FindObjectOfType<AccessoryPanel>();
+        dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
+        accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
     }
     private void OnEnable()
     {

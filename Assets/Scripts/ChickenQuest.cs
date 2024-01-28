@@ -21,8 +21,22 @@ public class ChickenQuest : MonoBehaviour
 
     int currentText = -1;
 
+    private static ChickenQuest chickenQuest;
+    public static ChickenQuest _ChickenQuest { get => chickenQuest; }
+
+
     public void Awake()
     {
+        if (chickenQuest == null)
+        {
+            chickenQuest = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this);
+        }
+
         dialoguePanel = GameObject.FindObjectOfType<DialoguePanel>();
         accessoryPanel = GameObject.FindObjectOfType<AccessoryPanel>();
     }
