@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: vet groot zwaard
   accessoryNameEn: eggscalibur
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - Ik heb precies wat je nodig hebt!
+  - Ik leen je mijn Eggscalibur!
+  - "Wel terug geven hoor, als je klaar bent met je date\u2026"
+  accessoryDialogEn:
+  - I have exactly what you need!
+  - I loan you my Eggscalibur!
+  - Well give it back hoor, if you are done with your date...
   attachmentPoint: 5
   sprite: {fileID: 21300000, guid: 8de0380a36786404a85f57e9bcf85e25, type: 3}

@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: koptelefoon
   accessoryNameEn: cat ear headphones
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - 'Ja, die geef ik weg! '
+  - Je hebt net het gouden ei gevonden, dit is de laatste.
+  accessoryDialogEn:
+  - Yes, that one I give away!
+  - You just found the golden egg, this is the last.
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: bd215d73b92c8e8419a0de7cc9100fd4, type: 3}

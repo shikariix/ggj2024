@@ -14,7 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: spijkerbroekie
   accessoryNameEn: jean
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - Een beetje vogel draagt dit.
+  - 'Hennifer Aniston droeg het ook, echt waar!
+
+'
+  accessoryDialogEn:
+  - A bit of a bird wears this.
+  - Hennifer Aniston wears it also, really true!
   attachmentPoint: 1
   sprite: {fileID: 21300000, guid: 678ebf411f2b2bd4483e2c95a6fa950e, type: 3}
