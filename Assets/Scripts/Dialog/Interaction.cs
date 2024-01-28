@@ -12,27 +12,32 @@ public class Interaction : MonoBehaviour
     public AccessoryObject accessory;
     public QuestObject quest;
 
+    private ChickenMovement chickenMovement;
+
     int currentText = -1;
 
     private void Start()
     {
         if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
         if (!accessoryPanel) accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
+
+        chickenMovement = GameObject.FindObjectOfType<ChickenMovement>();
     }
     private void OnEnable()
     {
         dialoguePanel.dialogueButton.onClick.RemoveAllListeners();
+        dialoguePanel.dialogueButton.onClick.AddListener(() => updateText());
         accessoryPanel.accessoryImage.sprite = accessory.sprite;
         accessoryPanel.accessoryImage.SetNativeSize();
         accessoryPanel.accessoryTextField.text = accessory.accessoryName;
         if (LocalizationManager._LocalizationManager != null) { if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) { accessoryPanel.accessoryTextField.SetText(accessory.accessoryNameEn); } }
         updateText();
-        dialoguePanel.dialogueButton.onClick.AddListener(() => updateText());
     }
     public void activateDialog()
     {
         if (dialoguePanel != null && !dialoguePanel.gameObject.activeSelf)
         {
+            chickenMovement.enabled = false;
             this.enabled = true;
             dialoguePanel.gameObject.SetActive(true);
             this.gameObject.SetActive(false);
@@ -88,6 +93,8 @@ public class Interaction : MonoBehaviour
     {
         currentText = -1;
         dialoguePanel.gameObject.SetActive(false);
+        chickenMovement.enabled = true;
+        this.enabled = false;
         if (!Inventory._Inventory.InventoryContainsAccessory(accessory))
         {
             Inventory._Inventory.AddItem(accessory);

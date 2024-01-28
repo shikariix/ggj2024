@@ -22,7 +22,7 @@ public class ChickenMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !ChickenQuest._ChickenQuest.dialoguePanel.gameObject.activeSelf && !ChickenQuest._ChickenQuest.accessoryPanel.gameObject.activeSelf)
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
