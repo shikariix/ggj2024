@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: luchtgitaar
   accessoryNameEn: air guitar
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - 'Je wilt het hart van een chicky veeroveren? '
+  - Ik weet wel een goede ~move~ daarvoor ;^
+  accessoryDialogEn:
+  - You want to conquer a chick's heart?
+  - I know well a good ~move~ for that ;^
   attachmentPoint: 5
   sprite: {fileID: 21300000, guid: b9a67c3e2d9667b4681c1c105ceb7381, type: 3}

@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: fopneus
   accessoryNameEn: prank nose
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - 'Kip ik heb je! Neus! Ha-ha! '
+  - Kippen hebben geen neuzen. Maar jij nu wel!
+  accessoryDialogEn:
+  - Chicken, I've got youre! Nose! Ha-ha!
+  - Chickens don't have noses. But you do now!
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: dad49b691c3bbd4479f23127f83a4342, type: 3}
