@@ -470,20 +470,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadingTexts:
-  - een spel door de Tokkies
-  - het verhaal over . . .
-  - spanning . . .
-  - liefde . . .
-  - keuzes . . .
+  - De Tokkies presenteren . . .
+  - Een kakelvers spel over leifde . . .
+  - uitpikken . . .
+  - opveren . . .
   - . . . en kippen
   - <size=200%>K I P P E N S J A N S
   englishFadingTexts:
-  - a game by de Tokkies
-  - the story about . . .
-  - voltage . . .
-  - love . . .
-  - choices . . .
-  - . . . and chickens
+  - De Tokkies present . . .
+  - a story about . . .
+  - feathers in your cap . . .
+  - picking . . .
+  - . . . and hot chicks
   - <size=200%>C H I C K I N P A N T S
   textLength: 3
   fadeGroup: {fileID: 1392343632}

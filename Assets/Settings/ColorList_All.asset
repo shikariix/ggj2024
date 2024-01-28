@@ -15,6 +15,8 @@ MonoBehaviour:
   colorList:
   - {fileID: 11400000, guid: 429a68aefa737874eabcd2c22da5c824, type: 2}
   - {fileID: 11400000, guid: 624f49ebc8b687a43b304b15b8a6cf2f, type: 2}
-  - {fileID: 11400000, guid: cd65b0656f741dc4a92aec98fecf1a0d, type: 2}
-  - {fileID: 11400000, guid: e826b4eb74270d04fa0e61b8e01e0844, type: 2}
   - {fileID: 11400000, guid: 659b212395a576642ae56bc9d04ec243, type: 2}
+  - {fileID: 11400000, guid: cd65b0656f741dc4a92aec98fecf1a0d, type: 2}
+  - {fileID: 11400000, guid: 2ca516c489298084089bc8ebe9518889, type: 2}
+  - {fileID: 11400000, guid: e826b4eb74270d04fa0e61b8e01e0844, type: 2}
+  - {fileID: 11400000, guid: da67c4158f6abae40a33b9bdbb9b632a, type: 2}

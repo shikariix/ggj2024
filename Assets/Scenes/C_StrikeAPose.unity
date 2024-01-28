@@ -760,7 +760,7 @@ PrefabInstance:
       objectReference: {fileID: 8400000, guid: 21a4ef078c291ad4ebb6cc259018ce18, type: 2}
     - target: {fileID: 8105941917422538130, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
       propertyPath: m_text
-      value: en wat een leuke meid
+      value: en wat een leuke kip
       objectReference: {fileID: 0}
     - target: {fileID: 8194256010084456442, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
       propertyPath: m_Name
@@ -801,8 +801,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 0}
-  dutchText: en wat een leuke meid
-  englishText: and what a nice chick
+  dutchText: en wat een leuke kip
+  englishText: and what a lovely chick
 --- !u!1 &635717206
 GameObject:
   m_ObjectHideFlags: 0
@@ -2246,7 +2246,7 @@ PrefabInstance:
       objectReference: {fileID: 8400000, guid: 08736e0164f058b4496221610484a404, type: 2}
     - target: {fileID: 8105941917422538130, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
       propertyPath: m_text
-      value: ze vond mn outfit leuk!
+      value: hen vond mn outfit leuk!
       objectReference: {fileID: 0}
     - target: {fileID: 8194256010084456442, guid: 92e1a9747a1eded428db3151dc2dca8f, type: 3}
       propertyPath: m_Name
@@ -2287,8 +2287,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textField: {fileID: 0}
-  dutchText: ze vond mn outfit leuk!
-  englishText: she found my outfit nice!
+  dutchText: hen vond mn outfit leuk!
+  englishText: they found my outfit nice!
 --- !u!1 &1504380505
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,13 @@ public class QuitButton : MonoBehaviour
 
 	}
 
+
+#if !UNITY_STANDALONE_WIN
+	private void OnEnable() {
+		Destroy(this.gameObject);
+	}
+#endif
+
 	public void ButtonPressed() {
 		Application.Quit();
 	}
