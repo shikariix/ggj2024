@@ -41,8 +41,9 @@ public class ChickenQuest : MonoBehaviour
         accessoryPanel = GameObject.FindObjectOfType<AccessoryPanel>();
     }
 
-    public void OnEnable()
-    {
+    public void OnEnable() {
+        dialoguePanel = GameObject.FindObjectOfType<DialoguePanel>();
+        accessoryPanel = GameObject.FindObjectOfType<AccessoryPanel>();
         dialoguePanel.gameObject.SetActive(false);
         accessoryPanel.gameObject.SetActive(false);
     }
