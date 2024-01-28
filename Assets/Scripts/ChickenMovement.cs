@@ -10,6 +10,8 @@ public class ChickenMovement : MonoBehaviour
     private float timePassed = 0;
     private ChickenAnimator chickenAnimator;
 
+    private CoopDoor coopDoorClicked;
+
     private void Start()
     {
         chickenAnimator = GetComponent<ChickenAnimator>();
@@ -28,20 +30,28 @@ public class ChickenMovement : MonoBehaviour
             {
                 timePassed = 0;
                 startPosition = transform.position;
-                targetPosition = hit.point;
+                targetPosition = hit.point + Vector3.up * 1.2f;
+                targetPosition.y = Mathf.Clamp(targetPosition.y, .3f, 2.3f);
                 if (hit.point.x > startPosition.x) {
                     transform.localScale = new Vector3(-1, 1, 1);
 				}
 				else {
                     transform.localScale = Vector3.one;
                 }
+                if (hit.transform.gameObject.GetComponent<CoopDoor>()) {
+                    coopDoorClicked = hit.transform.gameObject.GetComponent<CoopDoor>();
+                }
             }
         }
 
-        if (targetPosition != transform.position)
+        if (Vector3.Distance(targetPosition, transform.position) > .05f)
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition, (timePassed += Time.deltaTime));
         }
+        else if (coopDoorClicked != null) {
+            coopDoorClicked.UseCoopDoor();
+            coopDoorClicked = null;
+		}
 
         if (chickenAnimator != null) {
             chickenAnimator.SetWalking(Vector3.Distance(targetPosition, transform.position) > .3f);
