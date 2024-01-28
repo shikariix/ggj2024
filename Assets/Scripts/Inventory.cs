@@ -95,13 +95,13 @@ public class Inventory : MonoBehaviour
 	}
 
     public List<ColorObject> GetAllInventoryColors() {
-        if (debug) {
+        //if (debug) {
             List<ColorObject> all = new List<ColorObject>(allColors.colorList);
             return all;
-        }
-        else {
-            return colorList;
-        }
+        //}
+        //else {
+        //    return colorList;
+        //}
     }
 
     public List<ColorObject> GetUnobtainedColors() {

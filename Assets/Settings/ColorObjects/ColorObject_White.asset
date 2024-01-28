@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: ColorObject_White
   m_EditorClassIdentifier: 
   colorName: klassiek
+  colorNameEn: a classic
   colorDescription: 
+  colorDescriptionEn: 
   colorMap: {fileID: 2800000, guid: 9183330749dfa5b4b810ad052df02d40, type: 3}
   colorA: {r: 1, g: 1, b: 1, a: 1}
   colorB: {r: 1, g: 0.6862745, b: 0, a: 1}
