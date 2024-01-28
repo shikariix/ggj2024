@@ -496,8 +496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a292a8a8360f27d48a1b484026a8dc1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialoguePanel: {fileID: 0}
-  accessoryPanel: {fileID: 0}
+  dialoguePanel: {fileID: 1106257841}
+  accessoryPanel: {fileID: 534244736}
   giveAccessoryWithoutQuest: 1
   accessory: {fileID: 11400000, guid: a280a41d889fffa48b9a0319176ee2d4, type: 2}
   quest: {fileID: 0}
@@ -822,6 +822,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1618884563}
     m_Modifications:
+    - target: {fileID: 1723614522529347905, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6020028409077030736, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
       propertyPath: m_Name
       value: DialoguePanel
@@ -829,10 +833,6 @@ PrefabInstance:
     - target: {fileID: 6020028409077030736, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6020028409077030736, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 7828858320298510623, guid: c3d7bf0355dbd73489ec3a8fe18a7475, type: 3}
       propertyPath: m_TagString
@@ -1810,6 +1810,8 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 1618884563}
+  - {fileID: 852093053}
   - {fileID: 416284221}
   - {fileID: 1520021005}
   - {fileID: 1530938489}
@@ -1819,7 +1821,5 @@ SceneRoots:
   - {fileID: 1947069988}
   - {fileID: 1675319343}
   - {fileID: 551843509}
-  - {fileID: 1618884563}
   - {fileID: 1088601751}
   - {fileID: 857329801}
-  - {fileID: 852093053}

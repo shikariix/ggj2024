@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class Interaction : MonoBehaviour
 {
     public DialoguePanel dialoguePanel;
-    private Button dialogButton;
-
     public AccessoryPanel accessoryPanel;
 
     public bool giveAccessoryWithoutQuest = false;
@@ -16,24 +14,20 @@ public class Interaction : MonoBehaviour
 
     int currentText = -1;
 
-    private void Awake()
+    private void Start()
     {
         if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
         if (!accessoryPanel) accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
     }
     private void OnEnable()
     {
-        if (dialogButton == null)
-        {
-            dialogButton = dialoguePanel.GetComponentInChildren<Button>();
-        }
-        dialogButton.onClick.RemoveAllListeners();
-        dialogButton.onClick.AddListener(updateText);
+        dialoguePanel.dialogueButton.onClick.RemoveAllListeners();
         accessoryPanel.accessoryImage.sprite = accessory.sprite;
         accessoryPanel.accessoryImage.SetNativeSize();
         accessoryPanel.accessoryTextField.text = accessory.accessoryName;
         if (LocalizationManager._LocalizationManager != null) { if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) { accessoryPanel.accessoryTextField.SetText(accessory.accessoryNameEn); } }
         updateText();
+        dialoguePanel.dialogueButton.onClick.AddListener(() => updateText());
     }
     public void activateDialog()
     {

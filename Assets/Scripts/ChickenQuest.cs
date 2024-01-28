@@ -63,6 +63,7 @@ public class ChickenQuest : MonoBehaviour
                         //Check of kip item direct mag geven of dat er een quest nodig is
                         if (interactedChicken.giveAccessoryWithoutQuest)
                         {
+                            interactedChicken.enabled = true;
                             interactedChicken.updateText();
                         }
                         //anders: dialoog? deze heb ik nog niet helemaal uitgedacht

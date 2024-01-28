@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueText: {fileID: 4097306936076878652}
+  dialogueButton: {fileID: 7549867821576603640}
 --- !u!1 &6043393470081705129
 GameObject:
   m_ObjectHideFlags: 0
