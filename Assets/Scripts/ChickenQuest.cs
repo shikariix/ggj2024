@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ChickenQuest : MonoBehaviour
@@ -36,16 +37,19 @@ public class ChickenQuest : MonoBehaviour
         {
             Destroy(this);
         }
-
-        dialoguePanel = GameObject.FindObjectOfType<DialoguePanel>();
-        accessoryPanel = GameObject.FindObjectOfType<AccessoryPanel>();
     }
 
     public void OnEnable() {
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
         dialoguePanel = GameObject.FindObjectOfType<DialoguePanel>();
         accessoryPanel = GameObject.FindObjectOfType<AccessoryPanel>();
-        dialoguePanel.gameObject.SetActive(false);
-        accessoryPanel.gameObject.SetActive(false);
+        if (dialoguePanel) dialoguePanel.gameObject.SetActive(false);
+        if (accessoryPanel) accessoryPanel.gameObject.SetActive(false);
     }
 
     private void Update()
