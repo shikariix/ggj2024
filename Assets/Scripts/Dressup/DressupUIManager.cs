@@ -57,7 +57,7 @@ public class DressupUIManager : MonoBehaviour
 
 		TabButtonPressed(0);
 
-		if (Inventory._Inventory.GetAllInventoryAccessories().Count + Inventory._Inventory.GetAllInventoryColors().Count < 5) {
+		if (Inventory._Inventory.GetAllInventoryAccessories().Count < 5) {
 			proceedToDateButton.interactable = false;
 			proceedToDateLock.enabled = true;
 		}

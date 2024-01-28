@@ -13,7 +13,7 @@ public class LocalizeStaticText : MonoBehaviour
 	[TextArea(3, 5)]
 	public string englishText;
 	
-	private void Awake() {
+	private void OnEnable() {
 		if (textField == null) {
 			textField = GetComponent<TextMeshProUGUI>();
 		}

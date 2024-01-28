@@ -8,7 +8,10 @@ public class SceneSwitcher : MonoBehaviour
 
     private static SceneSwitcher sceneSwitcher;
 
+	private static int currentScene;
+
 	public static SceneSwitcher _SceneSwitcher { get => sceneSwitcher; }
+	public static int _CurrentScene { get => currentScene; }
 
 	private void Awake() {
 		if (sceneSwitcher == null) {
@@ -33,7 +36,10 @@ public class SceneSwitcher : MonoBehaviour
 
 	public void LoadScene(ChickenScene scene) { LoadScene((int)scene); }
 	public void LoadScene(int value) {
-		SceneManager.LoadScene(value);
+		if (currentScene != value) {
+			SceneManager.LoadScene(value);
+			currentScene = value;
+		}
 	}
 
 }
