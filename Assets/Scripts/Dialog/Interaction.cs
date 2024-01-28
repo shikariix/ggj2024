@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -48,9 +49,6 @@ public class Interaction : MonoBehaviour
 
     public void updateText()
     {
-        Debug.Log("Update text");
-        Debug.Log("Quest: " + !!quest);
-        Debug.Log("Accessory: " + !!accessory);
         if (!dialoguePanel.gameObject.activeSelf)
         {
             dialoguePanel.gameObject.SetActive(true);
@@ -98,6 +96,14 @@ public class Interaction : MonoBehaviour
         }
     }
 
+    public void displayText(string customText)
+    {
+        dialoguePanel.dialogueText.SetText(customText);
+        //hack
+        dialoguePanel.dialogueButton.onClick.RemoveAllListeners();
+        dialoguePanel.dialogueButton.onClick.AddListener(() => closeDialog(false));
+    }
+
     public void displayText(int index)
     {
         if (accessory)
@@ -139,13 +145,13 @@ public class Interaction : MonoBehaviour
         
     }
 
-    private void closeDialog()
+    private void closeDialog(bool giveItem = true)
     {
         currentText = -1;
         dialoguePanel.gameObject.SetActive(false);
         chickenMovement.enabled = true;
         this.enabled = false;
-        if (accessory && !Inventory._Inventory.InventoryContainsAccessory(accessory))
+        if (accessory && !Inventory._Inventory.InventoryContainsAccessory(accessory) && giveItem)
         {
             Inventory._Inventory.AddItem(accessory);
             accessoryPanel.gameObject.SetActive(true);

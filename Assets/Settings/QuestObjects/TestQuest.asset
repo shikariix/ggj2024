@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46a94ddd79a2da74ba6bf2a70540adba, type: 3}
   m_Name: TestQuest
   m_EditorClassIdentifier: 
-  questName: Test Quest
-  accessory: {fileID: 11400000, guid: a280a41d889fffa48b9a0319176ee2d4, type: 2}
+  questName: vanGoghQuest
+  accessory: {fileID: 11400000, guid: 27b0055af6486c34c803ad929a9363c9, type: 2}
   questDialog:
-  - Ik test hier het startdialoog
-  - Wahoo jippie!
-  completed: 0
+  - Help! Ik ben mijn moeder kwijt in deze chaos.
+  - Ze draagt altijd gekke hoeden. Kan jij haar voor me vinden?
+  - Als bedankje geeft ze je een afgrijselijke hoed van haar collectie.
+  completed: 1

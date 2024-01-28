@@ -89,6 +89,11 @@ public class ChickenQuest : MonoBehaviour
                             ActiveQuest.completed = true;
                             ActiveQuest = null;
                         }
+                        else
+                        {
+                            interactedChicken.dialoguePanel.gameObject.SetActive(true);
+                            interactedChicken.displayText(wrongChicken);
+                        }
                     }
                 }
             }
