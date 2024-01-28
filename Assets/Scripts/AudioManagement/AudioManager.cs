@@ -41,6 +41,7 @@ public class AudioManager : MonoBehaviour
 
 	public static AudioManager _AudioManager { get => audioManager; }
 	public float Volume { get => volume; set => SetVolume(value); }
+	public float ChickensReverbVolume { get => chickensReverbVolume; set => chickensReverbVolume = value; }
 
 	private void Awake() {
 		if (audioManager == null) {
@@ -87,16 +88,23 @@ public class AudioManager : MonoBehaviour
 	private void Update() {
 		if (SceneSwitcher._SceneSwitcher != null) {
 			if (currentScene != SceneSwitcher._CurrentScene) {
+				if (currentScene < 1 && SceneSwitcher._CurrentScene == 1) {
+					StartMusic();
+				}
 				currentScene = SceneSwitcher._CurrentScene;
-				chickensSource.enabled = currentScene > 2;
-				chickensReverbSource.enabled = currentScene == 3;
+				chickensSource.enabled = currentScene == 3;
+				chickensReverbSource.enabled = (currentScene == 3) || (currentScene == 0);
 				applauseSource.enabled = currentScene == 4;
 				if (currentScene == 0) {
-					StartMusic();
+					StopMusic();
 				}
 			}
 
-			if (currentScene > 2) {
+			if (currentScene == 0) {
+				chickensReverbSource.volume = chickensReverbVolume * volume;
+			}
+
+			if (currentScene == 3) {
 				chickensVolume = volumeCurve.Evaluate(Mathf.Clamp01((Time.time / chickensCurveLength) % 1)) * chickensVolumeMultiplier * volume;
 				chickensReverbVolume = volumeCurve.Evaluate(Mathf.Clamp01((Time.time / chickensReverbCurveLenght) % 1)) * chickensReverbVolumeMultiplier * volume;
 				chickensSource.volume = chickensVolume;

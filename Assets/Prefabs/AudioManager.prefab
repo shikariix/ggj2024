@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicClip: {fileID: 8300000, guid: dda33463fecf2d84ea759413d3225f31, type: 3}
-  applauseClip: {fileID: 8300000, guid: 7f44165114369744bb10410c8753105f, type: 3}
+  applauseClip: {fileID: 8300000, guid: b9948bba88ea46141a53afbf3b6df879, type: 3}
   buttonHover:
   - {fileID: 8300000, guid: 1edff59d5bf098246aea8ca83e3a879b, type: 3}
   - {fileID: 8300000, guid: f08ebb57157bd4d478a5fa1c86d8ee75, type: 3}

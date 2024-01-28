@@ -13,7 +13,7 @@ public class IntroScene : MonoBehaviour
 	public CanvasGroup fadeGroup;
 	public TextMeshProUGUI textField;
 
-	private void Awake() {
+	private void Start() {
 		if (LocalizationManager._LocalizationManager != null) {
 			if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch) {
 				StartCoroutine(FadeAll(fadingTexts));
@@ -29,6 +29,11 @@ public class IntroScene : MonoBehaviour
 
 	private IEnumerator FadeAll(string[] texts) {
 		fadeGroup.alpha = 0;
+		if (AudioManager._AudioManager != null) {
+			if (AudioManager._AudioManager.Volume > .1f) {
+				StartCoroutine(AudioFadeIn(1 + texts.Length * textLength));
+			}
+		}
 		yield return new WaitForSeconds(1);
 		for (int i = 0; i < texts.Length; i++) {
 			textField.text = texts[i];
@@ -49,6 +54,15 @@ public class IntroScene : MonoBehaviour
 			yield return null;
 		}
 		SceneSwitcher._SceneSwitcher.LoadScene(ChickenScene.MainMenu);
+	}
+
+	private IEnumerator AudioFadeIn(float length) {
+		AudioManager._AudioManager.ChickensReverbVolume = 0;
+		yield return new WaitForSeconds(length / 2);
+		for (float f = 0; f < length * .5f; f += Time.deltaTime) {
+			AudioManager._AudioManager.ChickensReverbVolume = f / (length * .5f);
+			yield return null;
+		}
 	}
 
 }
