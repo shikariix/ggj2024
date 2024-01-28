@@ -22,7 +22,6 @@ public class DialogueAudioFeedback : MonoBehaviour {
 	}
 
 	public void ButtonPressed() {
-		Debug.Log("dialogue advance sound should play at " + Time.time);
 		if (AudioManager._AudioManager != null)
 			AudioManager._AudioManager.PlayOneShot(OneShot.DialogueAdvance);
 	}

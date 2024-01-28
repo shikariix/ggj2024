@@ -8,10 +8,11 @@ public class AudioManager : MonoBehaviour
 	public AudioClip musicClip;
 	public AudioClip applauseClip;
 
-	[Header("Feedback")]
+	[Header("OneShots")]
 	public AudioClip[] buttonHover;
 	public AudioClip[] buttonPress;
 	public AudioClip[] dialogueAdvance;
+	public AudioClip[] chickenStep;
 
 	[Header("Chaos Chickens")]
 	public AudioClip chickensClip;
@@ -21,6 +22,9 @@ public class AudioManager : MonoBehaviour
 	public float chickensReverbCurveLenght = 20;
 	public float chickensVolumeMultiplier = .3f;
 	public float chickensReverbVolumeMultiplier = .5f;
+
+	[Header("Tools For Us")]
+	public bool noMusic = false;
 
 	private static AudioManager audioManager;
 
@@ -54,18 +58,12 @@ public class AudioManager : MonoBehaviour
 		musicSource.playOnAwake = false;
 		musicSource.loop = true;
 		musicSource.clip = musicClip;
-		musicSource.volume = volume;
+		musicSource.volume = noMusic ? 0 : volume;
 		StartMusic();
 
 		oneShotSource = gameObject.AddComponent<AudioSource>();
 		oneShotSource.playOnAwake = false;
 		oneShotSource.loop = false;
-
-		musicSource = gameObject.AddComponent<AudioSource>();
-		musicSource.playOnAwake = false;
-		musicSource.loop = true;
-		musicSource.clip = musicClip;
-		musicSource.volume = volume;
 
 		chickensSource = gameObject.AddComponent<AudioSource>();
 		chickensSource.playOnAwake = true;
@@ -93,6 +91,9 @@ public class AudioManager : MonoBehaviour
 				chickensSource.enabled = currentScene > 2;
 				chickensReverbSource.enabled = currentScene == 3;
 				applauseSource.enabled = currentScene == 4;
+				if (currentScene == 0) {
+					StartMusic();
+				}
 			}
 
 			if (currentScene > 2) {
@@ -109,13 +110,22 @@ public class AudioManager : MonoBehaviour
 	public void SetVolume(float value) {
 		volume = value;
 		musicSource.volume = value;
-		musicSource.mute = value < .1f;
+		musicSource.mute = value < .1f || noMusic;
 		oneShotSource.volume = value;
 		oneShotSource.mute = value < .1f;
+
+		chickensSource.volume = value;
+		chickensSource.mute = value < .1f;
+		chickensReverbSource.volume = value;
+		chickensReverbSource.mute = value < .1f;
+
+		applauseSource.volume = value;
+		applauseSource.mute = value < .1f;
 	}
 
 	public void StartMusic() {
-		musicSource.Play();
+		if (!noMusic)
+			musicSource.Play();
 	}
 
 	public void StopMusic() {
@@ -128,7 +138,7 @@ public class AudioManager : MonoBehaviour
 
 		oneShotSource.Stop();
 		oneShotSource.volume = volume;
-		AudioClip clip;
+		AudioClip clip = null;
 		switch (oneShot) {
 			case OneShot.ButtonHover:
 				clip = buttonHover[Random.Range(0, buttonHover.Length)];
@@ -140,8 +150,8 @@ public class AudioManager : MonoBehaviour
 			case OneShot.DialogueAdvance:
 				clip = dialogueAdvance[Random.Range(0, dialogueAdvance.Length)];
 				break;
-			default:
-				clip = null;
+			case OneShot.ChickenStep:
+				clip = chickenStep[Random.Range(0, chickenStep.Length)];
 				break;
 		}
 		oneShotSource.clip = clip;
@@ -152,5 +162,6 @@ public class AudioManager : MonoBehaviour
 public enum OneShot {
 	ButtonHover = 1,
 	ButtonPress = 2,
-	DialogueAdvance = 3
+	DialogueAdvance = 3,
+	ChickenStep = 4
 }

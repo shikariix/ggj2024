@@ -16,16 +16,24 @@ public class AudioMuteButton : MonoBehaviour
 		button = GetComponent<Button>();
 		button.onClick.AddListener(() => this.ButtonPressed());
 
-		bool audioOn = AudioManager._AudioManager.Volume > .5f;
+		bool audioOn = false;
+		if (AudioManager._AudioManager != null) {
+			audioOn = AudioManager._AudioManager.Volume > .5f;
+		}
+		else {
+			gameObject.SetActive(false);
+		}
 		musicOn.SetActive(audioOn);
 		muted.SetActive(!audioOn);
 	}
 
 	public void ButtonPressed() {
-		bool audioOn = AudioManager._AudioManager.Volume < .5f;
-		AudioManager._AudioManager.Volume = audioOn ? 1 : 0;
-		musicOn.SetActive(audioOn);
-		muted.SetActive(!audioOn);
+		if (AudioManager._AudioManager != null) {
+			bool audioOn = AudioManager._AudioManager.Volume < .5f;
+			AudioManager._AudioManager.Volume = audioOn ? 1 : 0;
+			musicOn.SetActive(audioOn);
+			muted.SetActive(!audioOn);
+		}
 	}
 
 }

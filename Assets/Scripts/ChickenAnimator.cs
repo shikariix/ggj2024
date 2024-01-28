@@ -26,6 +26,11 @@ public class ChickenAnimator : MonoBehaviour
 		lastChangeTime = Time.time;
 	}
 
+	public void PlayStepSound() {
+		if (AudioManager._AudioManager != null)
+			AudioManager._AudioManager.PlayOneShot(OneShot.ChickenStep);
+	}
+
 	private IEnumerator RandomPeckTimer() {
 		yield return new WaitForSeconds(averageGroundPeckTime * Random.Range(.7f, 1.5f));
 		if (lastChangeTime + averageGroundPeckTime * .5f < Time.time && canRandom) {

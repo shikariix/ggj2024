@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: ColorObject_BuffOrpington
   m_EditorClassIdentifier: 
   colorName: lekker warme
+  colorNameEn: orange fruit
   colorDescription: 
+  colorDescriptionEn: 
   colorMap: {fileID: 2800000, guid: d51bb4b1a148ce143a662bc385c8b6a9, type: 3}
   colorA: {r: 1, g: 0.427451, b: 0, a: 1}
   colorB: {r: 1, g: 0.1137255, b: 0, a: 1}
