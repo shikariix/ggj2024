@@ -30,8 +30,6 @@ public class ChickenMovement : MonoBehaviour
             {
                 timePassed = 0;
                 startPosition = transform.position;
-                targetPosition = hit.point + Vector3.up * 1.2f;
-                targetPosition.y = Mathf.Clamp(targetPosition.y, .3f, 2.3f);
                 if (hit.point.x > startPosition.x) {
                     transform.localScale = new Vector3(-1, 1, 1);
 				}
@@ -41,6 +39,11 @@ public class ChickenMovement : MonoBehaviour
                 if (hit.transform.gameObject.GetComponent<CoopDoor>()) {
                     coopDoorClicked = hit.transform.gameObject.GetComponent<CoopDoor>();
                 }
+                else if (hit.transform.gameObject.GetComponent<Interaction>() == null) {
+                    targetPosition = hit.point + Vector3.up * 1.2f;
+                }
+                targetPosition.y = Mathf.Clamp(targetPosition.y, .3f, 2.3f);
+                targetPosition.z = startPosition.z;
             }
         }
 
