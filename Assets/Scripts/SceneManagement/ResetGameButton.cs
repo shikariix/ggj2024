@@ -16,5 +16,6 @@ public class ResetGameButton : MonoBehaviour
 
 	public void ButtonPressed() {
 		DressupOutfit._DressupOutfit.Reset();
+		Inventory._Inventory.ResetInventory();
 	}
 }

@@ -62,6 +62,9 @@ public class DressupChicken : MonoBehaviour
 
             SetColor(outfit.CurrentColor());
 		}
+        else if (!isMainCharacter) {
+            SetColor(Inventory._Inventory.GetAllInventoryColors()[Random.Range(0, Inventory._Inventory.GetAllInventoryColors().Count)]);
+        }
     }
 
 	public void SetAccessory(AccessoryObject accessory, bool canRemove = true) {

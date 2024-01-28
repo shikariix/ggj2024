@@ -118,4 +118,8 @@ public class Inventory : MonoBehaviour
         return colorList.Contains(color);
     }
 
+    public void ResetInventory() {
+        accessoryList = new List<AccessoryObject>();
+        colorList = new List<ColorObject>();
+    }
 }
