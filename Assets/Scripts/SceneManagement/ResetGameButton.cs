@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class ResetGameButton : MonoBehaviour
 {
 
+	public GameObject[] disableOnStart;
+	
 	private Button button;
 	
 	private void Awake() {
@@ -14,8 +16,24 @@ public class ResetGameButton : MonoBehaviour
 		button.onClick.AddListener(() => this.ButtonPressed());
 	}
 
+	private void Start() {
+		foreach(GameObject gameObject in disableOnStart) {
+			gameObject.SetActive(false);
+		}
+		StartCoroutine(DisableAfterFrames());
+	}
+
 	public void ButtonPressed() {
 		DressupOutfit._DressupOutfit.Reset();
 		Inventory._Inventory.ResetInventory();
+	}
+
+	private IEnumerator DisableAfterFrames() {
+		yield return null;
+		foreach (GameObject gameObject in disableOnStart) {
+			gameObject.SetActive(true);
+			yield return null;
+			gameObject.SetActive(false);
+		}
 	}
 }
