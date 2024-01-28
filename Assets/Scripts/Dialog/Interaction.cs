@@ -35,7 +35,7 @@ public class Interaction : MonoBehaviour
         if (LocalizationManager._LocalizationManager != null) { if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) { accessoryPanel.accessoryTextField.SetText(accessory.accessoryNameEn); } }
         updateText();
     }
-    void OnMouseDown()
+    public void activateDialog()
     {
         if (dialoguePanel != null && !dialoguePanel.gameObject.activeSelf)
         {

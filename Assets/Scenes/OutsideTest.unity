@@ -661,7 +661,7 @@ GameObject:
   - component: {fileID: 852093053}
   - component: {fileID: 852093052}
   m_Layer: 0
-  m_Name: QuestManager
+  m_Name: QUEST
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
