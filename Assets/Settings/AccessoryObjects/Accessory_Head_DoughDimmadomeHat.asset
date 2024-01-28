@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: dimmadome
   accessoryNameEn: dimmadome
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - "*Grom* Ik wilde een momentje rust\u2026"
+  - Als ik je de hoed geef, zeg je dan niks tegen Dibah-gawk?
+  accessoryDialogEn:
+  - '*Growls* I wanted a moment rest...'
+  - If I give you the hat, say you nothing to Dibah-gawk then?
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: f8a9e100b2fe9e54c88a92944e3c9f4e, type: 3}

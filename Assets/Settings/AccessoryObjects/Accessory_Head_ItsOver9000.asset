@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   accessoryName: over 9000
   accessoryNameEn: over 9000
-  accessoryDialog: []
-  accessoryDialogEn: []
+  accessoryDialog:
+  - Oh!! *Squawk* Je swegg niveau!! Het is over 9000!!!!!!
+  accessoryDialogEn:
+  - Oh!! *Squawk* Your swegg level!! It is over 9000!!!!!!
   attachmentPoint: 3
   sprite: {fileID: 21300000, guid: 913a72689539d5c44a196f909af24415, type: 3}
