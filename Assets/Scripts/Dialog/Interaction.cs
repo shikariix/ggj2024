@@ -18,8 +18,8 @@ public class Interaction : MonoBehaviour
 
     private void Awake()
     {
-        dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
-        accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
+        if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
+        if (!accessoryPanel) accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
     }
     private void OnEnable()
     {
@@ -47,6 +47,11 @@ public class Interaction : MonoBehaviour
 
     public void updateText()
     {
+        if (!dialoguePanel.gameObject.activeSelf)
+        {
+            dialoguePanel.gameObject.SetActive(true);
+        }
+
         int dialogLength = accessory.accessoryDialog.Length -1;
         if (LocalizationManager._LocalizationManager != null) {
             if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) {
@@ -89,8 +94,11 @@ public class Interaction : MonoBehaviour
     {
         currentText = -1;
         dialoguePanel.gameObject.SetActive(false);
-        accessoryPanel.gameObject.SetActive(true);
-        Inventory._Inventory.AddItem(accessory);
+        if (!Inventory._Inventory.InventoryContainsAccessory(accessory))
+        {
+            Inventory._Inventory.AddItem(accessory);
+            accessoryPanel.gameObject.SetActive(true);
+        }
     }
 
 }
