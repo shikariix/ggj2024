@@ -9,12 +9,7 @@ public class QuestObject : ScriptableObject
     [Header("Settings")]
     public AccessoryObject accessory;
 
-    public bool instantGet = false;
-    /// <summary>
-    /// Only relevant if above is false.
-    /// </summary>
     public string[] questDialog;
 
-    [HideInInspector]
-    public bool completed;
+    public bool completed = false;
 }

@@ -16,21 +16,23 @@ public class Interaction : MonoBehaviour
 
     int currentText = -1;
 
-    private void Start()
+    private void Awake()
     {
         if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
         if (!accessoryPanel) accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
-
         chickenMovement = GameObject.FindObjectOfType<ChickenMovement>();
     }
     private void OnEnable()
     {
         dialoguePanel.dialogueButton.onClick.RemoveAllListeners();
         dialoguePanel.dialogueButton.onClick.AddListener(() => updateText());
-        accessoryPanel.accessoryImage.sprite = accessory.sprite;
-        accessoryPanel.accessoryImage.SetNativeSize();
-        accessoryPanel.accessoryTextField.text = accessory.accessoryName;
-        if (LocalizationManager._LocalizationManager != null) { if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) { accessoryPanel.accessoryTextField.SetText(accessory.accessoryNameEn); } }
+        if (accessory)
+        { 
+            accessoryPanel.accessoryImage.sprite = accessory.sprite;
+            accessoryPanel.accessoryImage.SetNativeSize();
+            accessoryPanel.accessoryTextField.text = accessory.accessoryName;
+            if (LocalizationManager._LocalizationManager != null) { if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) { accessoryPanel.accessoryTextField.SetText(accessory.accessoryNameEn); } }
+        }
         updateText();
     }
     public void activateDialog()
@@ -46,17 +48,39 @@ public class Interaction : MonoBehaviour
 
     public void updateText()
     {
+        Debug.Log("Update text");
+        Debug.Log("Quest: " + !!quest);
+        Debug.Log("Accessory: " + !!accessory);
         if (!dialoguePanel.gameObject.activeSelf)
         {
             dialoguePanel.gameObject.SetActive(true);
         }
 
-        int dialogLength = accessory.accessoryDialog.Length -1;
-        if (LocalizationManager._LocalizationManager != null) {
-            if (LocalizationManager._LocalizationManager.currentLanguage == Language.English) {
-                dialogLength = accessory.accessoryDialogEn.Length -1;
+        int dialogLength = 0;
+
+        if (accessory)
+        {
+            dialogLength = accessory.accessoryDialog.Length -1;
+            if (LocalizationManager._LocalizationManager != null)
+            {
+                if (LocalizationManager._LocalizationManager.currentLanguage == Language.English)
+                {
+                    dialogLength = accessory.accessoryDialogEn.Length - 1;
+                }
             }
         }
+        else if (quest)
+        {
+            dialogLength = quest.questDialog.Length - 1;
+            if (LocalizationManager._LocalizationManager != null)
+            {
+                if (LocalizationManager._LocalizationManager.currentLanguage == Language.English)
+                {
+                    //dialogLength = quest.questDialogEn.Length - 1;
+                }
+            }
+        }
+        
 
         if (currentText == -1)
         {
@@ -76,17 +100,43 @@ public class Interaction : MonoBehaviour
 
     public void displayText(int index)
     {
-        if (LocalizationManager._LocalizationManager != null) {
-            if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch) {
+        if (accessory)
+        {
+            if (LocalizationManager._LocalizationManager != null)
+            {
+                if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch)
+                {
+                    dialoguePanel.dialogueText.SetText(accessory.accessoryDialog[index]);
+                }
+                else
+                {
+                    dialoguePanel.dialogueText.SetText(accessory.accessoryDialogEn[index]);
+                }
+            }
+            else
+            {
                 dialoguePanel.dialogueText.SetText(accessory.accessoryDialog[index]);
             }
-			else {
-                dialoguePanel.dialogueText.SetText(accessory.accessoryDialogEn[index]);
+        }
+        else if (quest)
+        {
+            if (LocalizationManager._LocalizationManager != null)
+            {
+                if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch)
+                {
+                    dialoguePanel.dialogueText.SetText(quest.questDialog[index]);
+                }
+                else
+                {
+                    //dialoguePanel.dialogueText.SetText(quest.questDialogEn[index]);
+                }
+            }
+            else
+            {
+                dialoguePanel.dialogueText.SetText(quest.questDialog[index]);
             }
         }
-		else {
-            dialoguePanel.dialogueText.SetText(accessory.accessoryDialog[index]);
-        }
+        
     }
 
     private void closeDialog()
@@ -95,7 +145,7 @@ public class Interaction : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         chickenMovement.enabled = true;
         this.enabled = false;
-        if (!Inventory._Inventory.InventoryContainsAccessory(accessory))
+        if (accessory && !Inventory._Inventory.InventoryContainsAccessory(accessory))
         {
             Inventory._Inventory.AddItem(accessory);
             accessoryPanel.gameObject.SetActive(true);

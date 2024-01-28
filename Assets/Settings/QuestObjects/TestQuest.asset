@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TestQuest
   m_EditorClassIdentifier: 
   questName: Test Quest
-  accessory: {fileID: 11400000, guid: 458030fb78cfdb24c8d1320808b13216, type: 2}
-  instantGet: 0
+  accessory: {fileID: 11400000, guid: a280a41d889fffa48b9a0319176ee2d4, type: 2}
   questDialog:
   - Ik test hier het startdialoog
   - Wahoo jippie!
+  completed: 0

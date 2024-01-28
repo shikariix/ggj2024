@@ -77,6 +77,7 @@ public class ChickenQuest : MonoBehaviour
                         {
                             ActiveQuest = interactedChicken.quest;
                             //start dialoog aub
+                            interactedChicken.enabled = true;
                         }
                     }
                     else if (ActiveQuest)
@@ -84,7 +85,7 @@ public class ChickenQuest : MonoBehaviour
                         //als kip goede item heeft, draai dialoog en sluit quest
                         if (ActiveQuest.accessory == interactedChicken.accessory)
                         {
-                            interactedChicken.updateText();
+                            interactedChicken.enabled = true;
                             ActiveQuest.completed = true;
                             ActiveQuest = null;
                         }
