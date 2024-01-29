@@ -44,7 +44,7 @@ public class ChickenMovement : MonoBehaviour
                 else if (hit.transform.gameObject.GetComponent<Interaction>() == null) {
                     targetPosition = hit.point + Vector3.up * 1.2f;
                 }
-                targetPosition.y = Mathf.Clamp(targetPosition.y, .3f, 2.3f);
+                targetPosition.y = Mathf.Clamp(targetPosition.y, .3f, 2f);
                 targetPosition.z = startPosition.z;
             }
         }

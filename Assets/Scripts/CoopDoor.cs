@@ -20,6 +20,8 @@ public class CoopDoor : MonoBehaviour
             outside.SetActive(true);
             inside.SetActive(false);
         }
+        if (AudioManager._AudioManager != null)
+            AudioManager._AudioManager.PlayOneShot(OneShot.ButtonPress);
 	}
 
 }

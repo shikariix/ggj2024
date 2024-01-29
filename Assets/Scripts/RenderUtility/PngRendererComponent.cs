@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEngine;
 using System.IO;
 
@@ -156,3 +157,4 @@ public class PngRendererComponent : MonoBehaviour
 	}
 
 }
+#endif

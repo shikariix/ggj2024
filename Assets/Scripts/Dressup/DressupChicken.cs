@@ -14,6 +14,7 @@ public class DressupChicken : MonoBehaviour
     public SpriteRenderer tailAccessorySprite;
     public SpriteRenderer frontWingAccessorySprite;
     public SpriteRenderer backWingAccessorySprite;
+    public SpriteRenderer bodyTopAccessorySprite;
 
     private AccessoryObject bodyAccessory;
     private AccessoryObject feetAccessory;
@@ -21,6 +22,7 @@ public class DressupChicken : MonoBehaviour
     private AccessoryObject tailAccessory;
     private AccessoryObject frontWingAccessory;
     private AccessoryObject backWingAccessory;
+    private AccessoryObject bodyTopAccessory;
 
     [Header("Body sprites")]
     public SpriteRenderer bodySprite;
@@ -42,6 +44,7 @@ public class DressupChicken : MonoBehaviour
         tailAccessorySprite.enabled = false;
         frontWingAccessorySprite.enabled = false;
         backWingAccessorySprite.enabled = false;
+        bodyTopAccessorySprite.enabled = false;
 
         propertyBlock = new MaterialPropertyBlock();
 
@@ -59,6 +62,7 @@ public class DressupChicken : MonoBehaviour
             SetAccessory(outfit.GetCurrentAccessory(AccessoryType.BackWing));
             SetAccessory(outfit.GetCurrentAccessory(AccessoryType.FrontWing));
             SetAccessory(outfit.GetCurrentAccessory(AccessoryType.Head));
+            SetAccessory(outfit.GetCurrentAccessory(AccessoryType.BodyTop));
 
             SetColor(outfit.CurrentColor());
 		}
@@ -141,6 +145,8 @@ public class DressupChicken : MonoBehaviour
                 return frontWingAccessory;
             case AccessoryType.BackWing:
                 return backWingAccessory;
+            case AccessoryType.BodyTop:
+                return bodyTopAccessory;
             default:
                 return null;
 		}
@@ -166,6 +172,9 @@ public class DressupChicken : MonoBehaviour
             case AccessoryType.BackWing:
                 backWingAccessory = remove ? null : accessory;
                 break;
+            case AccessoryType.BodyTop:
+                bodyTopAccessory = remove ? null : accessory;
+                break;
             default:
                 break;
 		}
@@ -185,6 +194,8 @@ public class DressupChicken : MonoBehaviour
                 return frontWingAccessorySprite;
             case AccessoryType.BackWing:
                 return backWingAccessorySprite;
+            case AccessoryType.BodyTop:
+                return bodyTopAccessorySprite;
             default:
                 return null;
 		}

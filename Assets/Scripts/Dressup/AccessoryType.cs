@@ -6,6 +6,7 @@ public enum AccessoryType {
     Tail = 4,
     FrontWing = 5,
     BackWing = 6,
+    BodyTop = 7,
 
     // FeatherColor = 10
 }

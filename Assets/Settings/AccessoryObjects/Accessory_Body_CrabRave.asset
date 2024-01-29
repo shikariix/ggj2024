@@ -19,5 +19,5 @@ MonoBehaviour:
     doen?
   accessoryDialogEn:
   - Chickens and roosters, chickies and cluckers, can you please stop acting normal?
-  attachmentPoint: 1
+  attachmentPoint: 7
   sprite: {fileID: 21300000, guid: 34540fb8caa11ea4d979fabe6cd8b04b, type: 3}

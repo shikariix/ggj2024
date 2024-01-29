@@ -13,6 +13,7 @@ public class DressupOutfit : MonoBehaviour
 	private AccessoryObject tailAccessory;
 	private AccessoryObject frontWingAccessory;
 	private AccessoryObject backWingAccessory;
+    private AccessoryObject bodyTopAccessory;
 
 	private ColorObject currentColor;
 
@@ -76,6 +77,8 @@ public class DressupOutfit : MonoBehaviour
                 return frontWingAccessory;
             case AccessoryType.BackWing:
                 return backWingAccessory;
+            case AccessoryType.BodyTop:
+                return bodyTopAccessory;
             default:
                 return null;
         }
@@ -101,6 +104,9 @@ public class DressupOutfit : MonoBehaviour
             case AccessoryType.BackWing:
                 backWingAccessory = remove ? null : accessory;
                 break;
+            case AccessoryType.BodyTop:
+                bodyTopAccessory = remove ? null : accessory;
+                break;
             default:
                 break;
         }
@@ -117,6 +123,7 @@ public class DressupOutfit : MonoBehaviour
         tailAccessory = null;
         frontWingAccessory = null;
         backWingAccessory = null;
+        bodyTopAccessory = null;
 
         currentColor = null;
     }
