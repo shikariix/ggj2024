@@ -1285,6 +1285,10 @@ PrefabInstance:
       propertyPath: accessory
       value: 
       objectReference: {fileID: 11400000, guid: 27b0055af6486c34c803ad929a9363c9, type: 2}
+    - target: {fileID: 3223118643030938473, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: giveAccessoryWithoutQuest
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
       propertyPath: m_LocalScale.x
       value: -1
