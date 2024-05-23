@@ -64,6 +64,11 @@ public class ChickenQuest : MonoBehaviour
          RaycastHit2D hit = Physics2D.Raycast (ray.origin, ray.direction, Mathf.Infinity);
             if (hit.collider != null)
             {
+                if (dialoguePanel.gameObject.activeSelf)
+                {
+                    return;
+                }
+
                 if (hit.collider.gameObject.GetComponent<Interaction>())
                 {
                     Interaction interactedChicken = hit.collider.gameObject.GetComponent<Interaction>();
@@ -74,7 +79,6 @@ public class ChickenQuest : MonoBehaviour
                         {
                             interactedChicken.enabled = true;
                         }
-                        //anders: dialoog? deze heb ik nog niet helemaal uitgedacht
 
                         //als quest is gezet, start quest!
                         if (interactedChicken.quest && !interactedChicken.quest.completed)
