@@ -5,6 +5,7 @@ public class QuestObject : ScriptableObject
 {
     [Header("Info")]
     public string questName = "unnamedQuest";
+    public string questDescription = "Op zoek naar: ";
 
     [Header("Settings")]
     public AccessoryObject accessory;

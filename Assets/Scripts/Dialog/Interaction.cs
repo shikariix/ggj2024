@@ -4,6 +4,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine.SceneManagement;
+
 public class Interaction : MonoBehaviour
 {
     public DialoguePanel dialoguePanel;
@@ -13,6 +15,8 @@ public class Interaction : MonoBehaviour
     public AccessoryObject accessory;
     public QuestObject quest;
 
+    public QuestText questText;
+
     private ChickenMovement chickenMovement;
 
     int currentText = -1;
@@ -21,6 +25,7 @@ public class Interaction : MonoBehaviour
     {
         if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
         if (!accessoryPanel) accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
+        if (!questText) questText = ChickenQuest._ChickenQuest.questText;
         chickenMovement = GameObject.FindObjectOfType<ChickenMovement>();
     }
     private void OnEnable()
@@ -151,10 +156,17 @@ public class Interaction : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         chickenMovement.enabled = true;
         this.enabled = false;
+        if (quest)
+        {
+            questText.gameObject.SetActive(true);
+            questText.text.text = quest.questDescription;
+        }
+
         if (accessory && !Inventory._Inventory.InventoryContainsAccessory(accessory) && giveItem)
         {
             Inventory._Inventory.AddItem(accessory);
             accessoryPanel.gameObject.SetActive(true);
+            questText.gameObject.SetActive(false);
         }
     }
 

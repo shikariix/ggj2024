@@ -20,6 +20,8 @@ public class ChickenQuest : MonoBehaviour
 
     public AccessoryPanel accessoryPanel;
 
+    public QuestText questText;
+
     int currentText = -1;
 
     private static ChickenQuest chickenQuest;
@@ -48,8 +50,10 @@ public class ChickenQuest : MonoBehaviour
     {
         dialoguePanel = GameObject.FindObjectOfType<DialoguePanel>();
         accessoryPanel = GameObject.FindObjectOfType<AccessoryPanel>();
+        questText = GameObject.FindObjectOfType<QuestText>();
         if (dialoguePanel) dialoguePanel.gameObject.SetActive(false);
         if (accessoryPanel) accessoryPanel.gameObject.SetActive(false);
+        if (questText) questText.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -88,6 +92,7 @@ public class ChickenQuest : MonoBehaviour
                             interactedChicken.enabled = true;
                             ActiveQuest.completed = true;
                             ActiveQuest = null;
+                            questText.gameObject.SetActive(false);
                         }
                         else
                         {

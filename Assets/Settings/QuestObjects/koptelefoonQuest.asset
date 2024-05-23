@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a94ddd79a2da74ba6bf2a70540adba, type: 3}
-  m_Name: VanGoghQuest
+  m_Name: koptelefoonQuest
   m_EditorClassIdentifier: 
-  questName: vanGoghQuest
-  questDescription: 'Op zoek naar: Hoedje'
-  accessory: {fileID: 11400000, guid: 27b0055af6486c34c803ad929a9363c9, type: 2}
+  questName: koptelefoonQuest
+  questDescription: 'Op zoek naar: Kiptelefoon'
+  accessory: {fileID: 11400000, guid: 8ca0fe74ce1ed4543aa1b0e580228485, type: 2}
   questDialog:
-  - Help! Ik ben mijn moeder kwijt in deze chaos.
-  - Ze draagt altijd gekke hoeden. Kan jij haar voor me vinden?
-  - Als bedankje geeft ze je een afgrijselijke hoed van haar collectie.
+  - Wat wil je van me? Ik ben naar Chickovsky aan het luisteren.
+  - "Oh, je wilt ook zo\u2019n koptelefoon. Die heb ik gekregen van iemand in een
+    kippenhok."
   completed: 0
