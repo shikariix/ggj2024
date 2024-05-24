@@ -743,6 +743,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1610904416}
   - {fileID: 559524889}
   - {fileID: 32052106}
   - {fileID: 593497721}
@@ -1207,6 +1208,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1885634108}
     m_Modifications:
+    - target: {fileID: 2850854538368215195, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bd215d73b92c8e8419a0de7cc9100fd4, type: 3}
     - target: {fileID: 3223118643030938473, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
       propertyPath: accessory
       value: 
@@ -1219,6 +1224,10 @@ PrefabInstance:
       propertyPath: accessoryPanel
       value: 
       objectReference: {fileID: 534244736}
+    - target: {fileID: 3223118643030938473, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: giveAccessoryWithoutQuest
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19
@@ -1261,7 +1270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5332772613564761431, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
       propertyPath: m_Name
-      value: NPChicken (5)
+      value: NPChicken_Quest_Koptelefoon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2514,6 +2523,79 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inside: {fileID: 0}
   outside: {fileID: 321609860}
+--- !u!1001 &1387750829
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 570622237}
+    m_Modifications:
+    - target: {fileID: 3223118643030938473, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: quest
+      value: 
+      objectReference: {fileID: 11400000, guid: a1897fdad2b2a6b40af1ea778060dfb6, type: 2}
+    - target: {fileID: 3223118643030938473, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: accessory
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3223118643030938473, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: giveAccessoryWithoutQuest
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.51
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5332772613564761431, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+      propertyPath: m_Name
+      value: NPChicken_Quest_Koptelefoon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
 --- !u!1 &1398672588
 GameObject:
   m_ObjectHideFlags: 0
@@ -3229,6 +3311,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inside: {fileID: 1092482126}
   outside: {fileID: 321609860}
+--- !u!4 &1610904416 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
+  m_PrefabInstance: {fileID: 1387750829}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1618884559
 GameObject:
   m_ObjectHideFlags: 0
@@ -4162,7 +4249,7 @@ PrefabInstance:
       objectReference: {fileID: 534244736}
     - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8999996
+      value: 17.6
       objectReference: {fileID: 0}
     - target: {fileID: 4829765315268547829, guid: 1d3244fe03e86c84aafb4d4714217b7b, type: 3}
       propertyPath: m_LocalPosition.y
