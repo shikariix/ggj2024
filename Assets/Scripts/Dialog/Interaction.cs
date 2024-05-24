@@ -166,7 +166,7 @@ public class Interaction : MonoBehaviour
         {
             Inventory._Inventory.AddItem(accessory);
             accessoryPanel.gameObject.SetActive(true);
-            questText.gameObject.SetActive(false);
+            if (questText) questText.gameObject.SetActive(false);
         }
     }
 
