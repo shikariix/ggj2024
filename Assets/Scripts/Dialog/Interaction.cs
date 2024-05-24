@@ -79,7 +79,7 @@ public class Interaction : MonoBehaviour
             {
                 if (LocalizationManager._LocalizationManager.currentLanguage == Language.English)
                 {
-                    //dialogLength = quest.questDialogEn.Length - 1;
+                    dialogLength = quest.questDialogEn.Length - 1;
                 }
             }
         }
@@ -139,7 +139,7 @@ public class Interaction : MonoBehaviour
                 }
                 else
                 {
-                    //dialoguePanel.dialogueText.SetText(quest.questDialogEn[index]);
+                    dialoguePanel.dialogueText.SetText(quest.questDialogEn[index]);
                 }
             }
             else

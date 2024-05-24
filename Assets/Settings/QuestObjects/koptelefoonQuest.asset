@@ -17,6 +17,9 @@ MonoBehaviour:
   accessory: {fileID: 11400000, guid: 8ca0fe74ce1ed4543aa1b0e580228485, type: 2}
   questDialog:
   - Wat wil je van me? Ik ben naar Chickovsky aan het luisteren.
-  - "Oh, je wilt ook zo\u2019n koptelefoon. Die heb ik gekregen van iemand in een
-    kippenhok."
+  - "Oh, je wilt ook zo\u2019n koptelefoon. Die heb ik gekregen van iemand in het
+    andere kippenhok."
+  questDialogEn:
+  - What want you from me? I am listening to Chickovsky.
+  - Oh, jou want my headphones. These have I gotten from someone in the other kippencoop.
   completed: 0
