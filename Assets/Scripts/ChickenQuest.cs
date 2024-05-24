@@ -72,28 +72,7 @@ public class ChickenQuest : MonoBehaviour
                 if (hit.collider.gameObject.GetComponent<Interaction>())
                 {
                     Interaction interactedChicken = hit.collider.gameObject.GetComponent<Interaction>();
-                    if (!ActiveQuest)
-                    {
-                        //Check of kip item direct mag geven of dat er een quest nodig is
-                        if (interactedChicken.giveAccessoryWithoutQuest && !interactedChicken.enabled)
-                        {
-                            interactedChicken.enabled = true;
-                        }
-                        else if (!interactedChicken.giveAccessoryWithoutQuest && !interactedChicken.enabled)
-                        {
-                            interactedChicken.dialoguePanel.gameObject.SetActive(true);
-                            interactedChicken.displayText("(Die kip wil nu denk ik niet praten...)");
-                        }
-
-                        //als quest is gezet, start quest!
-                        if (interactedChicken.quest && !interactedChicken.quest.completed)
-                        {
-                            ActiveQuest = interactedChicken.quest;
-                            //start dialoog aub
-                            interactedChicken.enabled = true;
-                        }
-                    }
-                    else if (ActiveQuest)
+                    if (ActiveQuest)
                     {
                         //als kip goede item heeft, draai dialoog en sluit quest
                         if (ActiveQuest.accessory == interactedChicken.accessory)
@@ -102,12 +81,29 @@ public class ChickenQuest : MonoBehaviour
                             ActiveQuest.completed = true;
                             ActiveQuest = null;
                             questText.gameObject.SetActive(false);
+                            return;
                         }
-                        else
+                    }
+                    else
+                    {
+                        //als quest is gezet, start quest!
+                        if (interactedChicken.quest && !interactedChicken.quest.completed)
                         {
-                            interactedChicken.dialoguePanel.gameObject.SetActive(true);
-                            interactedChicken.displayText(wrongChicken);
+                            ActiveQuest = interactedChicken.quest;
+                            //start dialoog aub
+                            interactedChicken.enabled = true;
                         }
+                    }
+                    
+                    //Check of kip item direct mag geven of dat er een quest nodig is
+                    if (interactedChicken.giveAccessoryWithoutQuest && !interactedChicken.enabled)
+                    {
+                        interactedChicken.enabled = true;
+                    }
+                    else if (!interactedChicken.giveAccessoryWithoutQuest && !interactedChicken.enabled)
+                    {
+                        interactedChicken.dialoguePanel.gameObject.SetActive(true);
+                        interactedChicken.displayText("(Die kip wil nu denk ik niet praten...)");
                     }
                 }
             }

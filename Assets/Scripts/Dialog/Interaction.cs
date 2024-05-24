@@ -156,7 +156,7 @@ public class Interaction : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         chickenMovement.enabled = true;
         this.enabled = false;
-        if (quest)
+        if (quest && !quest.completed)
         {
             questText.gameObject.SetActive(true);
             questText.text.text = quest.questDescription;
@@ -166,7 +166,7 @@ public class Interaction : MonoBehaviour
         {
             Inventory._Inventory.AddItem(accessory);
             accessoryPanel.gameObject.SetActive(true);
-            if (questText) questText.gameObject.SetActive(false);
+            if (questText && !giveAccessoryWithoutQuest) questText.gameObject.SetActive(false);
         }
     }
 
