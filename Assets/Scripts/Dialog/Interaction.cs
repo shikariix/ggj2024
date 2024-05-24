@@ -33,7 +33,7 @@ public class Interaction : MonoBehaviour
         dialoguePanel.dialogueButton.onClick.RemoveAllListeners();
         dialoguePanel.dialogueButton.onClick.AddListener(() => updateText());
         if (accessory)
-        { 
+        {
             accessoryPanel.accessoryImage.sprite = accessory.sprite;
             accessoryPanel.accessoryImage.SetNativeSize();
             accessoryPanel.accessoryTextField.text = accessory.accessoryName;
@@ -61,18 +61,7 @@ public class Interaction : MonoBehaviour
 
         int dialogLength = 0;
 
-        if (accessory)
-        {
-            dialogLength = accessory.accessoryDialog.Length -1;
-            if (LocalizationManager._LocalizationManager != null)
-            {
-                if (LocalizationManager._LocalizationManager.currentLanguage == Language.English)
-                {
-                    dialogLength = accessory.accessoryDialogEn.Length - 1;
-                }
-            }
-        }
-        else if (quest)
+        if (quest)
         {
             dialogLength = quest.questDialog.Length - 1;
             if (LocalizationManager._LocalizationManager != null)
@@ -83,8 +72,18 @@ public class Interaction : MonoBehaviour
                 }
             }
         }
+        else if (accessory)
+        {
+            dialogLength = accessory.accessoryDialog.Length -1;
+            if (LocalizationManager._LocalizationManager != null)
+            {
+                if (LocalizationManager._LocalizationManager.currentLanguage == Language.English)
+                {
+                    dialogLength = accessory.accessoryDialogEn.Length - 1;
+                }
+            }
+        }
         
-
         if (currentText == -1)
         {
             currentText = 0;
@@ -111,25 +110,7 @@ public class Interaction : MonoBehaviour
 
     public void displayText(int index)
     {
-        if (accessory)
-        {
-            if (LocalizationManager._LocalizationManager != null)
-            {
-                if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch)
-                {
-                    dialoguePanel.dialogueText.SetText(accessory.accessoryDialog[index]);
-                }
-                else
-                {
-                    dialoguePanel.dialogueText.SetText(accessory.accessoryDialogEn[index]);
-                }
-            }
-            else
-            {
-                dialoguePanel.dialogueText.SetText(accessory.accessoryDialog[index]);
-            }
-        }
-        else if (quest)
+        if (quest)
         {
             if (LocalizationManager._LocalizationManager != null)
             {
@@ -147,6 +128,24 @@ public class Interaction : MonoBehaviour
                 dialoguePanel.dialogueText.SetText(quest.questDialog[index]);
             }
         }
+        else if (accessory)
+        {
+            if (LocalizationManager._LocalizationManager != null)
+            {
+                if (LocalizationManager._LocalizationManager.currentLanguage == Language.Dutch)
+                {
+                    dialoguePanel.dialogueText.SetText(accessory.accessoryDialog[index]);
+                }
+                else
+                {
+                    dialoguePanel.dialogueText.SetText(accessory.accessoryDialogEn[index]);
+                }
+            }
+            else
+            {
+                dialoguePanel.dialogueText.SetText(accessory.accessoryDialog[index]);
+            }
+        }
         
     }
 
@@ -156,13 +155,13 @@ public class Interaction : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         chickenMovement.enabled = true;
         this.enabled = false;
-        if (quest && !quest.completed)
+        if (quest && !quest.completed && !questText.gameObject.activeInHierarchy)
         {
             questText.gameObject.SetActive(true);
             questText.text.text = quest.questDescription;
         }
 
-        if (accessory && !Inventory._Inventory.InventoryContainsAccessory(accessory) && giveItem)
+        if (accessory && !Inventory._Inventory.InventoryContainsAccessory(accessory) && giveItem && !quest)
         {
             Inventory._Inventory.AddItem(accessory);
             accessoryPanel.gameObject.SetActive(true);

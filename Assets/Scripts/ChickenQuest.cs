@@ -75,7 +75,7 @@ public class ChickenQuest : MonoBehaviour
                     if (ActiveQuest)
                     {
                         //als kip goede item heeft, draai dialoog en sluit quest
-                        if (ActiveQuest.accessory == interactedChicken.accessory)
+                        if (ActiveQuest.accessory == interactedChicken.accessory && !interactedChicken.quest)
                         {
                             interactedChicken.enabled = true;
                             ActiveQuest.completed = true;
