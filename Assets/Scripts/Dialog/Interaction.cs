@@ -28,7 +28,7 @@ public class Interaction : MonoBehaviour
     }
     private void OnEnable()
     {
-        if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
+        if (!dialoguePanel || !questText || !accessoryPanel) setUIElements();
 
         dialoguePanel.dialogueButton.onClick.RemoveAllListeners();
         dialoguePanel.dialogueButton.onClick.AddListener(() => updateText());
