@@ -13,5 +13,5 @@ public class QuestObject : ScriptableObject
     public string[] questDialog;
     public string[] questDialogEn;
 
-    public bool completed = false;
+    //public bool completed = false;
 }

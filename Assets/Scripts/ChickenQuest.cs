@@ -27,7 +27,8 @@ public class ChickenQuest : MonoBehaviour
     private static ChickenQuest chickenQuest;
     public static ChickenQuest _ChickenQuest { get => chickenQuest; }
 
-
+    public List<QuestObject> completedQuests = new List<QuestObject>();
+   
     public void Awake()
     {
         if (chickenQuest == null)
@@ -37,7 +38,7 @@ public class ChickenQuest : MonoBehaviour
         }
         else
         {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 
@@ -54,6 +55,12 @@ public class ChickenQuest : MonoBehaviour
         if (dialoguePanel) dialoguePanel.gameObject.SetActive(false);
         if (accessoryPanel) accessoryPanel.gameObject.SetActive(false);
         if (questText) questText.gameObject.SetActive(false);
+
+        if (questText && ActiveQuest)
+        { 
+            questText.text.text = ActiveQuest.questDescription;
+            questText.gameObject.SetActive(true);
+        }
     }
 
     private void Update()
@@ -78,7 +85,8 @@ public class ChickenQuest : MonoBehaviour
                         if (ActiveQuest.accessory == interactedChicken.accessory && !interactedChicken.quest)
                         {
                             interactedChicken.enabled = true;
-                            ActiveQuest.completed = true;
+                            //ActiveQuest.completed = true;
+                            completedQuests.Add(ActiveQuest);
                             ActiveQuest = null;
                             questText.gameObject.SetActive(false);
                             return;
@@ -87,7 +95,7 @@ public class ChickenQuest : MonoBehaviour
                     else
                     {
                         //als quest is gezet, start quest!
-                        if (interactedChicken.quest && !interactedChicken.quest.completed)
+                        if (interactedChicken.quest && !completedQuests.Contains(interactedChicken.quest))
                         {
                             ActiveQuest = interactedChicken.quest;
                             //start dialoog aub
@@ -102,6 +110,9 @@ public class ChickenQuest : MonoBehaviour
                     }
                     else if (!interactedChicken.giveAccessoryWithoutQuest && !interactedChicken.enabled)
                     {
+                        //failsafe
+                        if (!interactedChicken.dialoguePanel)
+                            interactedChicken.setUIElements();
                         interactedChicken.dialoguePanel.gameObject.SetActive(true);
                         interactedChicken.displayText("(Die kip wil nu denk ik niet praten...)");
                     }
