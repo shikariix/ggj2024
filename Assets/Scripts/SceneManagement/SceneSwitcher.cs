@@ -24,17 +24,26 @@ public class SceneSwitcher : MonoBehaviour
 	}
 
 
-#if UNITY_EDITOR // debugging in-editor only
 	private void Update() {
-		if (Input.GetKeyDown(KeyCode.Alpha0)) { LoadScene(0); }
+
+#if UNITY_EDITOR // debugging in-editor only
+        if (Input.GetKeyDown(KeyCode.Alpha0)) { LoadScene(0); }
 		if (Input.GetKeyDown(KeyCode.Alpha1)) { LoadScene(1); }
 		if (Input.GetKeyDown(KeyCode.Alpha2)) { LoadScene(2); }
 		if (Input.GetKeyDown(KeyCode.Alpha3)) { LoadScene(3); }
 		if (Input.GetKeyDown(KeyCode.Alpha4)) { LoadScene(4); }
-	}
-#endif
 
-	public void LoadScene(ChickenScene scene) { LoadScene((int)scene); }
+#endif
+        //sorry ik drop even heel lelijk een close functie hier in zodat die altijd beschikbaar is
+#if UNITY_STANDALONE_WIN
+        if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+#endif
+    }
+
+    public void LoadScene(ChickenScene scene) { LoadScene((int)scene); }
 	public void LoadScene(int value) {
 		if (currentScene != value) {
 			SceneManager.LoadScene(value);
@@ -43,6 +52,8 @@ public class SceneSwitcher : MonoBehaviour
 	}
 
 }
+
+
 
 
 public enum ChickenScene {

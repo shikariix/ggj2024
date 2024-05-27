@@ -33,14 +33,4 @@ public class QuitButton : MonoBehaviour
 	{
 		Application.Quit();
 	}
-
-#if UNITY_STANDALONE_WIN
-	public void Update()
-	{
-		if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Escape))
-		{
-			Application.Quit();
-		}
-	}
-#endif
 }
