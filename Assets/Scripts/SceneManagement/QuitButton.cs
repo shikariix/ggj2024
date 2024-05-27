@@ -7,9 +7,10 @@ using UnityEngine.UI;
 public class QuitButton : MonoBehaviour
 {
 
-    private Button button;
+	private Button button;
 
-	private void Awake() {
+	private void Awake()
+	{
 		button = GetComponent<Button>();
 		button.onClick.AddListener(() => this.ButtonPressed());
 
@@ -28,7 +29,18 @@ public class QuitButton : MonoBehaviour
 	}
 #endif
 
-	public void ButtonPressed() {
+	public void ButtonPressed()
+	{
 		Application.Quit();
 	}
+
+#if UNITY_STANDALONE_WIN
+	public void Update()
+	{
+		if (Input.GetKey(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.Escape))
+		{
+			Application.Quit();
+		}
+	}
+#endif
 }
