@@ -123,5 +123,6 @@ public class ChickenQuest : MonoBehaviour
 
     public void ResetQuests() {
         completedQuests = new List<QuestObject>();
+        ActiveQuest = null;
     }
 }
