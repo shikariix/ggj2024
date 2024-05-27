@@ -23,13 +23,13 @@ public class Interaction : MonoBehaviour
 
     private void Awake()
     {
-        if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
-        if (!accessoryPanel) accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
-        if (!questText) questText = ChickenQuest._ChickenQuest.questText;
+        setUIElements();
         chickenMovement = GameObject.FindObjectOfType<ChickenMovement>();
     }
     private void OnEnable()
     {
+        if (!dialoguePanel) dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
+
         dialoguePanel.dialogueButton.onClick.RemoveAllListeners();
         dialoguePanel.dialogueButton.onClick.AddListener(() => updateText());
         if (accessory)
@@ -155,7 +155,8 @@ public class Interaction : MonoBehaviour
         dialoguePanel.gameObject.SetActive(false);
         chickenMovement.enabled = true;
         this.enabled = false;
-        if (quest && !quest.completed && !questText.gameObject.activeInHierarchy)
+        //quest completion check in deze if?
+        if (quest && !questText.gameObject.activeInHierarchy && !ChickenQuest._ChickenQuest.completedQuests.Contains(quest))
         {
             questText.gameObject.SetActive(true);
             questText.text.text = quest.questDescription;
@@ -167,6 +168,16 @@ public class Interaction : MonoBehaviour
             accessoryPanel.gameObject.SetActive(true);
             if (questText && !giveAccessoryWithoutQuest) questText.gameObject.SetActive(false);
         }
+    }
+
+    public void setUIElements()
+    {
+        if (!dialoguePanel)
+            dialoguePanel = ChickenQuest._ChickenQuest.dialoguePanel;
+        if (!accessoryPanel)
+            accessoryPanel = ChickenQuest._ChickenQuest.accessoryPanel;
+        if (!questText)
+            questText = ChickenQuest._ChickenQuest.questText;
     }
 
 }
